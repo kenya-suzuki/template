@@ -9,6 +9,10 @@
 </head>
 <body>
 
+	<!-- header -->
+	<s:include value="header.jsp" />
+	<!-- header end -->
+
 	<s:iterator value="#">
 		<!--　商品１　-->
 		<div class="picture1">

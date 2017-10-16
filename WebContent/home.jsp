@@ -51,9 +51,9 @@ $(function() {
     $('body').vegas({
     	timer : false,
         slides: [
-            { src: 'img/home2.jpg' },
-            { src: 'img/home3.jpg' },
-            { src: 'img/home2.jpg' }
+            { src: 'img/home11.jpg' },
+            { src: 'img/home12.jpg' },
+            { src: 'img/home13.jpg' }
         ]
     });
 });
