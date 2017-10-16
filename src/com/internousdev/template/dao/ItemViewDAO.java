@@ -31,7 +31,7 @@ public class ItemViewDAO {
 				dto.setItemId(rs.getInt("item_id"));
 				dto.setItemName(rs.getString("item_name"));
 				dto.setAuthor(rs.getString("item_author"));
-				dto.setImagePath(rs.getString("item_image"));
+				dto.setItemImage(rs.getString("item_image"));
 				searchList.add(dto);
 			}
 			rs.close();

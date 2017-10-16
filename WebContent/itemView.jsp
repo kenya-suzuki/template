@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
 </head>
 <body>
 
@@ -17,7 +16,7 @@
 	<s:iterator value="searchList">
 		<!--　商品１　-->
 		<div class="itemBox">
-			<ul>
+			<ul id="nav">
 				<li><a
 					href="<s:url action="GoItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
 						<img src="img/<s:property value="itemImage"/>" alt="" />
@@ -34,7 +33,7 @@
 
 
 	<script type="text/javascript"
-		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script>
 		$(function() {
 			$(window).load(function() {

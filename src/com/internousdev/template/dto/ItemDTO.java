@@ -37,7 +37,7 @@ public class ItemDTO {
     /**
      * 商品説明文
      */
-    private String overview;
+    private String itemDetail;
 
     /**
      * イメージパス
@@ -145,7 +145,7 @@ public class ItemDTO {
      * 価格を格納するメソッド
      * @param price セットする 価格
      */
-    public void setPrice( BigDecimal price){
+    public void setPrice(BigDecimal price){
         this.price=price;
     }
 
@@ -169,16 +169,16 @@ public class ItemDTO {
      * 詳細文を取得するメソッド
      * @return overview 詳細文
      */
-    public String getOverview(){
-        return overview;
+    public String getItemDetail(){
+        return itemDetail;
     }
 
     /**
      * 詳細文を格納するメソッド
      * @param overview セットする 詳細文
      */
-    public void setOverview(String overview){
-        this.overview=overview;
+    public void setItemDetail(String itemDetail){
+        this.itemDetail=itemDetail;
     }
 
     /**
@@ -193,7 +193,7 @@ public class ItemDTO {
      * イメージパスを格納するメソッド
      * @param imagePath セットする イメージパス
      */
-    public void setImagePath(String itemImage) {
+    public void setItemImage(String itemImage) {
         this.itemImage = itemImage;
     }
 
