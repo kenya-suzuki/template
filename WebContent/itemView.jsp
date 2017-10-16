@@ -16,13 +16,13 @@
 
 	<s:iterator value="searchList">
 		<!--　商品１　-->
-		<div class="picture1">
-			<a
-				href="<s:url action="GoItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
-
-				<img class="item_img" src="img/<s:property value="itemImage"/>">
-			</a>
-
+		<div class="itemBox">
+			<ul>
+				<li><a
+					href="<s:url action="GoItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
+						<img src="img/<s:property value="itemImage"/>" alt="" />
+				</a></li>
+			</ul>
 			<div class="itemName">
 				<strong><s:property value="itemName" /></strong>
 			</div>
@@ -31,6 +31,26 @@
 			</div>
 		</div>
 	</s:iterator>
+
+
+	<script type="text/javascript"
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>
+		$(function() {
+			$(window).load(function() {
+				var delaySpeed = 100;
+				var fadeSpeed = 1000;
+				$('ul li').each(function(i) {
+					$(this).delay(i * (delaySpeed)).css({
+						display : 'block',
+						opacity : '0'
+					}).animate({
+						opacity : '1'
+					}, fadeSpeed);
+				});
+			});
+		});
+	</script>
 
 </body>
 </html>
