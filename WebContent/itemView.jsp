@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 
@@ -13,32 +14,22 @@
 	<s:include value="header.jsp" />
 	<!-- header end -->
 
-	<s:iterator value="#">
+	<s:iterator value="searchList">
 		<!--　商品１　-->
 		<div class="picture1">
-
-
-			<div class="price">
-
-				<strong><s:property value="itemName" /></strong>
-			</div>
-			<!-- price end -->
-
 			<a
 				href="<s:url action="GoItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
 
-				<img class="item_img" src="<s:property value="image"/>">
+				<img class="item_img" src="img/<s:property value="itemImage"/>">
 			</a>
-			<div class="price2">
-				<span><s:hidden value="itemId" /></span><span class="font_en"><s:text
-						name="lang.itemview.doru" /> <fmt:formatNumber value="${price}"
-						pattern="###,###,###" /></span><strong><s:text
-						name="lang.itemview.price" /></strong>
+
+			<div class="itemName">
+				<strong><s:property value="itemName" /></strong>
+			</div>
+			<div class="author">
+				<strong><s:property value="author" /></strong>
 			</div>
 		</div>
-		<!--picture1 end  -->
-
-
 	</s:iterator>
 
 </body>

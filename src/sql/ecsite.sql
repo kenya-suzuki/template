@@ -14,17 +14,18 @@ insert_date datetime,
 updated_date datetime
 );
 
-drop table if exists item_info_transaction;
+drop table if exists items;
 
 create table items(
-id int not null primary key auto_increment,/*商品番号*/
-item_name varchar(30),/*商品名*/
+item_id int not null primary key auto_increment,/*商品番号*/
+item_name varchar(255) not null,/*商品名*/
+item_author varchar(255) not null,/*作者*/
 item_price int,/*単価*/
 item_stock int,/*在庫数*/
-item_image varchar(255) not null,/*イメージパス*/
-item_detail not null,/*商品詳細*/
+item_image varchar(255),/*イメージパス*/
+item_detail varchar(255),/*商品詳細*/
 item_sales int default 0,/*売り上げ数*/
-category varchar(20) not null,/*カテゴリ名*/
+category_id int default 1,/*カテゴリー番号*/
 insert_date datetime,
 update_date datetime
 );
@@ -43,12 +44,12 @@ delete_date datetime
 );
 
 
-INSERT INTO item_info_transaction(id, item_name, item_price, item_stock, item_image) VALUES
-(1, "牛乳を注ぐ女", 50000, 500, "item1.jpg", ""),
-(2, "真珠の耳飾りの少女", 40000, 100, "item2.jpg", ""),
-(3, "イーゼルの前の自画像", 60000, 900, "item3.jpg", ""),
-(4, "耳を切った自画像", 30000, 600, "item4.jpg", ""),
-(5, "カーニバルの晩 ", 30000, 600, "item5.jpg", ""),
-(6, "風景の中の自画像", 30000, 600, "item6.jpg", "");
+INSERT INTO items(item_id, item_name, item_author, item_price, item_stock, item_image) VALUES
+(1, "牛乳を注ぐ女", "ヨハネス・フェルメール", 50000, 500, "item1.jpg"),
+(2, "真珠の耳飾りの少女", "ヨハネス・フェルメール", 40000, 100, "item2.jpg"),
+(3, "イーゼルの前の自画像", "フィンセント・ファン・ゴッホ", 60000, 900, "item3.jpg"),
+(4, "耳を切った自画像", "フィンセント・ファン・ゴッホ", 30000, 600, "item4.jpg"),
+(5, "カーニバルの晩", "アンリ・ルソー", 30000, 600, "item5.jpg"),
+(6, "風景の中の自画像", "アンリ・ルソー", 30000, 600, "item6.jpg");
 
 INSERT INTO login_user_transaction(login_id, login_pass, user_name) VALUES("internous", "internous01", "test");

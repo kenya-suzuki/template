@@ -15,6 +15,11 @@ public class ItemDTO {
     private String itemName;
 
     /**
+     * 作者
+     */
+    private String author;
+
+    /**
      * カテゴリー名
      */
     private String itemCategory;
@@ -96,6 +101,20 @@ public class ItemDTO {
      */
     public void setItemName(String itemName){
         this.itemName=itemName;
+    }
+
+    /**
+     * 作者を取得するメソッド
+     */
+    public String getAuthor(){
+    	return author;
+    }
+
+    /**
+     * 作者を格納するメソッド
+     */
+    public void setAuthor(String author){
+    	this.author = author;
     }
 
     /**

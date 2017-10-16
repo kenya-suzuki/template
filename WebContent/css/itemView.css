@@ -1,0 +1,324 @@
+@CHARSET "UTF-8";
+
+.maintop{
+    width:1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+
+.title{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: rgba();
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0;
+    color: #333333;
+    width: 1200px;
+    height: 150px;
+    text-align: center;
+    line-height: 20px;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5) inset;
+  background-image: url(../img/interior9.png);
+  background-size: 100% 100%;
+  background-position: center;
+    background-repeat: repeat;
+}
+
+
+
+
+    .maintxt{
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:95px;
+    width:865px;
+    }
+.maintxt p{
+	font-size:0.8em;
+}
+
+
+
+.img_left{
+    position: absolute;
+    top:0;
+    left: 0px;
+}
+
+
+.img_center{
+    position: absolute;
+    top:0;
+    left: 240px;
+}
+
+
+
+
+
+.img_right{
+    position: absolute;
+    top:0;
+    right: 22px;
+}
+
+
+
+
+.enything{
+    margin-left: 25px;
+    margin-top: 50px;
+    font-size: 20px;
+    border-bottom: 1px solid darkorange;
+}
+
+
+
+
+.enything1{
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-top: 35px;
+    font-size: 22px;
+    border-bottom:1px solid darkorange;
+    border-left: 10px solid darkorange;
+}
+
+
+.enything2{
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-top: 50px;
+    font-size: 22px;
+    border-bottom:1px solid darkorange;
+    border-left: 10px solid darkorange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.main_left{
+    width:300px;
+
+    margin-top: 35px;
+    float:left;
+}
+
+
+
+.padding_left{
+    padding-left: 8px;
+    line-height:40px;
+}
+
+
+
+.color2, .color3{
+    font-size: 18px;
+}
+
+
+
+.foods,.costume{
+    position: relative;
+}
+
+.foods img,.costume img{
+    position: absolute;
+    left: 5px;
+    top: 10px;
+}
+
+
+/*検索ボタン　開始*/
+
+form, input {
+  margin: 0; /* マージンをリセット */
+}
+form {
+  position: relative; /* 基準位置とする */
+
+}
+input[type="search"] {
+  background-color: #fbd7a2;
+  border: 0;
+  height: 40px; /* 高さ40px */
+  width: 219px;
+  padding: 0 10px;
+  position: absolute; /* 絶対配置 */
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+}
+input[type="image"] {
+  border: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px; /* 高さ40px */
+  position: absolute; /* 絶対配置 */
+  left: 220px; /* 左から220px */
+  top: 0;
+}
+
+
+/*検索ボタン　終了*/
+
+
+/*btn left メニュー　設定*/
+.button {
+    width: 130px;
+  position: relative;
+  display: inline-block;
+  padding: .9em 4em;
+  background-color: #FF8C00;
+  border: 2px solid #333;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  margin-bottom: 6px;
+}
+
+
+.button:after {
+  position: absolute;
+  top: 50%;
+  right: .2em;
+  content: '';
+  margin-top: -5px;
+  border: 7px solid transparent;
+  border-top-width: 5px;
+  border-bottom-width: 5px;
+  border-left-color: #fff;
+  transition: all .3s;
+}
+.button:hover {
+  background-color: #fff;
+  color: #333;
+}
+.post-contents .button01:hover::after {
+  border-left-color: #333;
+}
+/*btn 終了*/
+
+
+
+
+
+.main_right{
+    width: 900px;
+    float:left;
+}
+
+
+/* 郢晏｣ｹ�ｿｽ�ｽｼ郢ｧ�ｽｸ郢晞亂�ｿｽ�ｽｼ郢ｧ�ｽｷ郢晢ｽｧ郢晢ｽｳ邵ｲ�ｿｽ鬮｢蜿･�ｽｧ�ｿｽ*/
+.pagnHy{
+    background-color: #eee;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 16px;
+    margin: 40px 0px;
+}
+
+.pagnNextArrow{
+    font-size: 20px;
+}
+
+.pagnCur{
+    padding: 0 10px;
+}
+#pagnPrevString{
+    font-weight: 700;
+}
+/*郢晏｣ｹ�ｿｽ�ｽｼ郢ｧ�ｽｸ郢晞亂�ｿｽ�ｽｼ郢ｧ�ｽｷ郢晢ｽｧ郢晢ｽｳ邵ｲ�ｿｽ驍ｨ繧��ｽｺ�ｿｽ*/
+
+
+
+.picture1{
+    width: 265px;
+    border:1px solid;
+    height:340px;
+    margin-top:70px;
+    margin-left: 30px;
+    text-align: center;
+    font-family:  YuGothic,'Yu Gothic';
+    float:left;
+    box-shadow: 5px 5px 5px #999;
+    ord-wrap: break-word;
+
+}
+
+.price2{
+	padding-top:6px;
+}
+
+
+.price{
+	border-bottom:1px solid;
+	background-color:#FF8C00;
+	line-height:40px;
+	height:40px;
+}
+
+
+.price strong{
+	color:#fff;
+text-shadow: 2px 3px 8px #000000;
+border-bottom:1px solid #fff;
+	}
+
+
+.picture1 span{
+	color:#ff0000;
+
+	}
+
+.font_en{
+	font-weight:bold;
+	font-size:20px;
+}
+
+
+.picture1 a:hover{
+ opacity:0.7;
+}
+
+
+.picture1 img{
+	width:100%;
+	height:260px;
+}
+
+
+.color1{
+	font-size:18px;
+}
+
+
+.color1:hover{
+	color:#FF8C00;
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+.clear{
+    clear:both;
+}

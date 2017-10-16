@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,7 +21,8 @@
 	<div class="entirebody">
 		<ul class="mainnav">
 			<li><a href="<s:url action="GoHomeAction" />">Home</a></li>
-			<li><a href="<s:url action="ItemViewAction" />">Product</a></li>
+			<li><a
+				href='<s:url action="ItemViewAction"><s:param name="categoryId" value="%{'1'}"/></s:url>'>Product</a></li>
 			<li><a href="<s:url action="MyPageAction" />">My page</a></li>
 			<li><a href="<s:url action="LoginAction" />">Login</a></li>
 		</ul>

@@ -13,33 +13,28 @@ public class ItemViewDAO {
 
 	ArrayList<ItemDTO> searchList = new ArrayList<ItemDTO>();
 
-	private int numImgPath = 5;
 
-	public ArrayList<ItemDTO> display(String category) {
+
+	public ArrayList<ItemDTO> display(int categoryId) {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
-		String sql = "select * from items where category=? and  is_deleted=0";
-		String sql2 = "select * from items_images where item_id=?";
+		String sql = "select * from items where category_id = ?";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, category);
+			ps.setInt(1, categoryId);
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
 
 				ItemDTO dto = new ItemDTO();
-				int itemViewId = rs.getInt("item_id");
-				dto.setItemId(itemViewId);
+				dto.setItemId(rs.getInt("item_id"));
 				dto.setItemName(rs.getString("item_name"));
-				dto.setPrice(rs.getBigDecimal("price"));
-				// dto.setImgAddress001(rs.getString("img_path2"));
-				// searchList.add(dto);
-
-				// rs.close();
+				dto.setAuthor(rs.getString("item_author"));
+				dto.setImagePath(rs.getString("item_image"));
 				searchList.add(dto);
-
 			}
+			rs.close();
 			con.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
