@@ -8,6 +8,7 @@ import java.util.Map;
 
 import com.internousdev.template.dao.ItemDetailDAO;
 import com.internousdev.template.dto.CartDTO;
+import com.internousdev.template.dto.ItemCommentDTO;
 import com.internousdev.template.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -46,16 +47,6 @@ public class ItemDetailAction extends ActionSupport {
     private BigDecimal price;
 
     /**
-     * 商品画像01
-     */
-    private String itemImg01;
-
-    /**
-     * 商品画像02
-     */
-    private String itemImg02;
-
-    /**
      * 商品詳細
      */
     private String itemDetail;
@@ -69,6 +60,13 @@ public class ItemDetailAction extends ActionSupport {
      * 商品一覧表示用リスト
      */
     private ArrayList<ItemDTO> displayList = new ArrayList<ItemDTO>();
+
+    /**
+     * 商品一覧表示用リスト
+     */
+    private ArrayList<ItemCommentDTO> commentttt = new ArrayList<ItemCommentDTO>();
+
+    private String commenttest;
 
     /**
      * 在庫数をリストに格納
@@ -105,9 +103,14 @@ public class ItemDetailAction extends ActionSupport {
      *
      */
     public String execute() throws SQLException {
+    	//setCommenttest("てすと");
+    	commenttest = "てすとん";
         String result = ERROR;
         ItemDetailDAO dao = new ItemDetailDAO();
         displayList = dao.selectbyItem(itemId);
+        commentttt = dao.selectCommentList(itemId);
+        System.out.println(displayList);
+        System.out.println(commentttt);
         if (displayList.size() != 0) {
             result = SUCCESS;
         }
@@ -209,38 +212,6 @@ public class ItemDetailAction extends ActionSupport {
     }
 
     /**
-     * 商品画像01を取得するメソッド
-     * @return itemImg01　商品画像01
-     */
-    public String getItemImg01() {
-        return itemImg01;
-    }
-
-    /**
-     * 商品画像01を格納するメソッド
-     * @param itemImg01 セットする itemImg01
-     */
-    public void setItemImg01(String itemImg01) {
-        this.itemImg01 = itemImg01;
-    }
-
-    /**
-     * 商品画像02を取得するメソッド
-     * @return itemImg02　商品画像02
-     */
-    public String getItemImg02() {
-        return itemImg02;
-    }
-
-    /**
-     * 商品画像02を格納するメソッド
-     * @param itemImg02 セットする itemImg02
-     */
-    public void setItemImg02(String itemImg02) {
-        this.itemImg02 = itemImg02;
-    }
-
-    /**
      * 商品詳細を取得するメソッド
      * @return itemsDetail　商品詳細
      */
@@ -270,6 +241,22 @@ public class ItemDetailAction extends ActionSupport {
      */
     public void setDisplayList(ArrayList<ItemDTO> displayList) {
         this.displayList = displayList;
+    }
+
+    /**
+     * 商品一覧表示用リストを取得するメソッド
+     * @return displayList　商品一覧表示用リスト
+     */
+    public ArrayList<ItemCommentDTO> getCommentttt() {
+        return this.commentttt;
+    }
+
+    /**
+     * 商品一覧表示用リストを格納するメソッド
+     * @param displayList セットする displayList
+     */
+    public void setCommentttt(ArrayList<ItemCommentDTO> commentttt) {
+        this.commentttt = commentttt;
     }
 
     /**
@@ -340,6 +327,14 @@ public class ItemDetailAction extends ActionSupport {
      */
     public void setStocks(int stocks) {
         this.stocks = stocks;
+    }
+
+    public void setCommenttest(String commenttest) {
+        this.commenttest = commenttest;
+    }
+
+    public String getCommenttest() {
+    	return this.commenttest;
     }
 
 }

@@ -24,7 +24,7 @@
 			<li><a
 				href='<s:url action="ItemViewAction"><s:param name="categoryId" value="%{'1'}"/></s:url>'>Product</a></li>
 			<li><a href="<s:url action="MyPageAction" />">My page</a></li>
-			<li><a href="<s:url action="LoginAction" />">Login</a></li>
+			<li><a href="login.jsp" >">Login</a></li>
 		</ul>
 	</div>
 </body>

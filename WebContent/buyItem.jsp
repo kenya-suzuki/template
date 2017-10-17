@@ -60,10 +60,11 @@
 	</style>
 </head>
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
+	<!-- header -->
+	<s:include value="header.jsp" />
+	<!-- header end -->
+
+
 	<div id="main">
 		<div id="top">
 			<p>BuyItem</p>

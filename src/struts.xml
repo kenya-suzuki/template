@@ -51,6 +51,15 @@
 			<result name="error">itemView.jsp</result>
 		</action>
 
+		<action name="ItemCommentAction"
+			class="com.internousdev.template.action.ItemCommentAction" method="execute">
+			<interceptor-ref name="defaultStack"/>
+			<!--  <interceptor-ref name="token"/>-->
+			<result name="invalid.token" type="chain">ItemDetailAction</result>
+			<result name="success" type="chain">ItemDetailAction</result>
+			<result name="error">login.jsp</result>
+		</action>
+
 		<!-- 商品一覧から商品詳細アクション -->
 		<action name="ItemDetailAction"
 			class="com.internousdev.template.action.ItemDetailAction"

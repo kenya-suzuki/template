@@ -6,7 +6,7 @@ use ecsite;
 drop table if exists login_user_transaction;
 
 create table login_user_transaction(
-id int not null primary key auto_increment,
+user_id int not null primary key auto_increment,
 login_id varchar(16) unique,
 login_pass varchar(16),
 user_name varchar(50),
@@ -43,6 +43,19 @@ insert_date datetime,
 delete_date datetime
 );
 
+drop table if exists comments;
+
+create table comments(
+comment_id int primary key not null auto_increment,
+item_id int not null,
+user_name varchar(50) not null,
+comment varchar(100) not null,
+registration_date date not null,
+update_date date not null
+/*foreign key(user_id)
+references openconnect.users(user_id)*/
+);
+
 
 INSERT INTO items(item_id, item_name, item_author, item_price, item_stock, item_image) VALUES
 (1, "牛乳を注ぐ女", "ヨハネス・フェルメール", 50000, 500, "item1.jpg"),
@@ -52,4 +65,6 @@ INSERT INTO items(item_id, item_name, item_author, item_price, item_stock, item_
 (5, "カーニバルの晩", "アンリ・ルソー", 30000, 600, "item5.jpg"),
 (6, "風景の中の自画像", "アンリ・ルソー", 30000, 600, "item6.jpg");
 
-INSERT INTO login_user_transaction(login_id, login_pass, user_name) VALUES("internous", "internous01", "test");
+INSERT INTO login_user_transaction(login_id, login_pass, user_name) VALUES
+("internous", "internous01", "test"),
+("nous@gmail.com", "internous02", "test1");

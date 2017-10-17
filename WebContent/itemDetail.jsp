@@ -46,24 +46,25 @@
 					<div class="tabs-item" id="tab2">
 						<div class="panel panel-primary" id="commentarea">
 							<div class="panel-heading" id="commenttitle">コメント</div>
-							<ul class="list-group" style="text-align: left">
-								<s:iterator value="commentList" status="st">
+							<s:iterator value="commentList">
+								<ul class="list-group">
+									<!--style="text-align: left">-->
 									<li class="list-group-item">
 										<div style="font-weight: bold">
-											<s:property value="user_name" />
+											<s:property value="userName" />
 										</div>
 										<div style="word-wrap: break-word;">
 											<s:property value="comment" />
 										</div>
 										<div>
-											<s:property value="registration_date" />
+											<s:property value="registrationDate" />
 										</div>
 									</li>
-								</s:iterator>
-							</ul>
+								</ul>
+							</s:iterator>
 						</div>
 
-						<s:form action="InsertCommentAction" method="get" name="comments"
+						<s:form action="ItemCommentAction" method="get" name="comments"
 							onClick="return check()">
 							<div class="input-group">
 								<span class="input-group-addon"><s:text
@@ -72,14 +73,9 @@
 									maxlength="100"></textarea>
 							</div>
 
-
-							<s:hidden name="search_recipe_id"
-								value="%{recipeList.get(0).getRecipe_id()}" />
+							<s:hidden name="itemId" value="%{displayList.get(0).getItemId()}" />
 							<button type="submit" class="hvr-grow btn btn-success"
-								style="margin-top: 10px;" id="comentBtn">
-								<s:text name="lang.recipe.sendcomment" />
-							</button>
-
+								style="margin-top: 10px;" id="comentBtn">コメントする</button>
 							<s:token />
 						</s:form>
 					</div>

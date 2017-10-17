@@ -22,17 +22,17 @@
 			<img id="profile-img" class="profile-img-card"
 				src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
 			<p id="profile-name" class="profile-name-card"></p>
-			<form class="form-signin">
+			<s:form class="form-signin" action="LoginAction">
 				<span id="reauth-email" class="reauth-email"></span> <input
-					type="email" id="inputEmail" class="form-control"
-					placeholder="Email address" required autofocus> <input
-					type="password" id="inputPassword" class="form-control"
-					placeholder="Password" required> <a
+					type="text" name="loginUserId" id="inputEmail" class="form-control">
+					<!--placeholder="Email address" required autofocus--> <input
+					type="password" name="loginPassword" id="inputPassword" class="form-control">
+					<!--placeholder="Password" required--> <a
 					href="<s:url action="UserCreateAction" />" class="forgot-password">
 					Account creation </a><br>
 				<button class="btn btn-lg btn-primary btn-block btn-signin"
 					type="submit">Sign in</button>
-			</form>
+			</s:form>
 			<a href="<s:url action="GoHomeAction" />" class="forgot-password">
 				Back to Home </a>
 		</div>

@@ -3,6 +3,7 @@ package com.internousdev.template.action;
 import java.util.ArrayList;
 
 import com.internousdev.template.dao.ItemViewDAO;
+import com.internousdev.template.dto.ItemCommentDTO;
 import com.internousdev.template.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -22,6 +23,11 @@ public class ItemViewAction extends ActionSupport {
 	 * サーチリスト
 	 */
 	public ArrayList<ItemDTO> searchList = new ArrayList<ItemDTO>();
+
+	/**
+     * コメント情報を格納するリスト
+     */
+    private ArrayList<ItemCommentDTO> commentList = new ArrayList<>();
 
 	/**
 	 * 実行メソッド
@@ -66,5 +72,21 @@ public class ItemViewAction extends ActionSupport {
 	public void setSearchList(ArrayList<ItemDTO> searchList) {
 		this.searchList = searchList;
 	}
+
+	 /**
+     * commentList コメント情報のリストを取得するメソッド
+     * @return commentList コメント情報のリスト
+     */
+    public ArrayList<ItemCommentDTO> getCommentList() {
+        return commentList;
+    }
+
+    /**
+     *  commentList コメント情報のリスト格納するメソッド
+     * @param commentList コメント情報のリスト
+     */
+    public void setCommentList(ArrayList<ItemCommentDTO> commentList) {
+        this.commentList = commentList;
+    }
 
 }

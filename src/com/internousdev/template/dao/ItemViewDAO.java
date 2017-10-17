@@ -13,8 +13,6 @@ public class ItemViewDAO {
 
 	ArrayList<ItemDTO> searchList = new ArrayList<ItemDTO>();
 
-
-
 	public ArrayList<ItemDTO> display(int categoryId) {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
