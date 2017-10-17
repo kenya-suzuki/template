@@ -40,7 +40,7 @@ public class ItemDetailDAO {
 				dto.setAuthor(rs.getString("item_author"));
 				dto.setPrice(rs.getBigDecimal("item_price"));
 				dto.setStock(rs.getInt("item_stock"));
-				dto.setItemDetail(rs.getString("item_detail").replace("\n", "<br>"));
+				/**dto.setItemDetail(rs.getString("item_detail").replace("\n", "<br>"));*/
 				dto.setItemImage(rs.getString("item_image"));
 				itemList.add(dto);
 

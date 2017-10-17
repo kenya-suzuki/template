@@ -1,45 +1,32 @@
 @CHARSET "UTF-8";
 
-#wrap {padding-bottom: 10px;}
-#header {margin-bottom: 30px;}
+ul {
+	/*margin: 0 auto;*/
+	width: 550px;
+	/*text-align: left;*/
+}
 
-h1 a:hover {text-decoration: underline;}
-#article {
-    width: 300px;
-    margin: 0 auto;
+ul li {
+	/*margin: 5px;
+	width: 100px;*/
+	/*text-align: left;
+	float: left;*/
+	display: none;
+	/*overflow: hidden;*/
 }
-div.section {
-    background: #fff;
-    padding: 20px;
-    height: 1000px;
-    margin-bottom: 20px;
+
+/* =======================================
+    ClearFixElements
+======================================= */
+ul:after {
+	content: ".";
+	height: 0;
+	clear: both;
+	display: block;
+	visibility: hidden;
 }
-#nav {
-    z-index: 1;
-    top: 100px;
-    left: 20px;
-    position: fixed;
-    background: #fff;
-    list-style: none;
+
+ul {
+	display: inline-block;
+	/*overflow: hidden;*/
 }
-#nav li a {
-    text-decoration: none;
-    width: 140px;
-    display: block;
-    padding: 5px;
-    text-align: center;
-}
-#nav li a:hover {background: #E3E3E3;}
-#bg0, #bg1, #bg2, #bg3, #bg4 {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-#bg0 {background: #000;}
-#bg1 {background: #eee;}
-#bg2 {background: #555;}
-#bg3 {background: #ccc;}
-#bg4 {background: #999;}

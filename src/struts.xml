@@ -52,8 +52,8 @@
 		</action>
 
 		<!-- 商品一覧から商品詳細アクション -->
-		<action name="GoItemDetailAction"
-			class="com.internousdev.template.action.GoItemDetailAction"
+		<action name="ItemDetailAction"
+			class="com.internousdev.template.action.ItemDetailAction"
 			method="execute">
 			<result name="success">itemDetail.jsp</result>
 			<result name="error">home.jsp</result>

@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+<link rel="stylesheet" href="css/#.css">
 <body>
 
 	<!-- header -->
@@ -18,22 +19,19 @@
 		<div class="itemBox">
 			<ul id="nav">
 				<li><a
-					href="<s:url action="GoItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
+					href="<s:url action="ItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
 						<img src="img/<s:property value="itemImage"/>" alt="" />
 				</a></li>
 			</ul>
 			<div class="itemName">
-				<strong><s:property value="itemName" /></strong>
-			</div>
-			<div class="author">
-				<strong><s:property value="author" /></strong>
+				<h4><s:property value="itemName" />  /  <s:property value="author" /></h4>
 			</div>
 		</div>
 	</s:iterator>
 
 
-	<script type="text/javascript"
-		src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+	<script src="js/jquery.fadethis.min.js"></script>
 	<script>
 		$(function() {
 			$(window).load(function() {
