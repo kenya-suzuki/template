@@ -6,6 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="css/itemDetail.css">
+<link rel="stylesheet" href="css/tab.css">
+
 </head>
 <body>
 
@@ -16,29 +20,61 @@
 	<div>
 		<s:iterator value="displayList">
 
-			<div class="img">
+			<div class="item-imgs">
 				<a
 					href="<s:url action="ItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
-					<img src="img/<s:property value="itemImage"/>" alt="" />
+					<img class="item-img" src="img/<s:property value="itemImage"/>"
+					alt="" />
 				</a>
 			</div>
 			<div class="itemName">
-				<s:property value="itemName" />
+				<h4>
+					<s:property value="itemName" />
+				</h4>
+			</div>
+			<div class="itemAuthor">
+				<h4>
+					<s:property value="author" />
+				</h4>
 			</div>
 			<div class="itemPrice">
-				<fmt:formatNumber value="${price}" pattern="###,###,###" />
+				<s:property value="price" />
+				<!--<fmt:formatNumber value="${price}" pattern="###,###,###" />-->
 			</div>
+
+			<s:form action="GoCartAction">
+				<s:hidden theme="simple" name="itemId" value="%{itemId}"></s:hidden>
+				<s:hidden name="price" value="%{price}"></s:hidden>
+				<s:hidden name="stock" value="%{stock}"></s:hidden>
+				<s:token />
+				<input class="goCart-btn" type="submit" value="カートに入れる">
+						個数選択：
+		<select name="quantities" size="1">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+				</select>
+
+			</s:form>
 
 			<div class="tabs">
 
 				<ul class="tabs__menu">
-					<li><a href="#tab1">Product Information</a></li>
-					<li><a href="#tab2">comment</a></li>
+					<li class="tabs__menu_li"><a href="#tab1">Product
+							Information</a></li>
+					<li class="tabs__menu_li"><a href="#tab2">comment</a></li>
 				</ul>
 
 				<div class="tabs__content">
+
 					<div class="tabs-item" id="tab1">
-						<s:property escape="false" value="itemDetail" />
+						<s:property value="itemddd" />
 					</div>
 
 					<div class="tabs-item" id="tab2">
@@ -51,13 +87,12 @@
 									maxlength="100"></textarea>
 							</div>
 							<s:hidden name="itemId" value="%{displayList.get(0).getItemId()}" />
-							<button type="submit" class="hvr-grow btn btn-success"
-								style="margin-top: 10px;" id="comentBtn">コメントする</button>
+							<button type="submit" class="comment-button" id="comentBtn">コメントする</button>
 							<s:token />
 						</s:form>
 
 						<div class="panel panel-primary" id="commentarea">
-							<div class="panel-heading" id="commenttitle">コメント</div>
+							<div class="panel-heading" id="commenttitle">comments</div>
 							<s:iterator value="commentttt">
 								<ul class="list-group">
 									<!--style="text-align: left">-->

@@ -37,7 +37,7 @@ public class ItemDTO {
     /**
      * 商品説明文
      */
-    private String itemDetail;
+    private String itemddd;
 
     /**
      * イメージパス
@@ -169,16 +169,16 @@ public class ItemDTO {
      * 詳細文を取得するメソッド
      * @return overview 詳細文
      */
-    public String getItemDetail(){
-        return itemDetail;
+    public String getItemddd(){
+        return itemddd;
     }
 
     /**
      * 詳細文を格納するメソッド
      * @param overview セットする 詳細文
      */
-    public void setItemDetail(String itemDetail){
-        this.itemDetail=itemDetail;
+    public void setItemddd(String itemDetail){
+        this.itemddd=itemDetail;
     }
 
     /**

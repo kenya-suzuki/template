@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /***************  START RESET *********************/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+/**html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
 	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
 	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
@@ -19,7 +19,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	text-decoration: none;
 	font-family: arial;
 	font-size: 100%;
-}
+}*/
 
 ol, ul {
 	list-style: none;
@@ -45,7 +45,7 @@ input {
 .entirebody {
 	margin: 0 auto;
 	width: 960px;
-	padding: 50px 0;
+	padding: 20px 0;
 }
 
 p {
@@ -72,7 +72,9 @@ ul.mainnav li a {
 	font-family: 'HelveticaNeueLTCom-Lt';
 	font-size: 18px;
 	line-height: 50px;
-	margin-top: 4px;
+	margin: 0 50px;
+	text-decoration: none;
+	/**margin-top: 4px;*/
 }
 
 ul.mainnav li a:hover, ul.mainnav li a.active {
