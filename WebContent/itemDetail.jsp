@@ -44,6 +44,7 @@
 
 			<s:form action="GoCartAction">
 				<s:hidden theme="simple" name="itemId" value="%{itemId}"></s:hidden>
+				<s:hidden name="itemName" value="%{itemName}"></s:hidden>
 				<s:hidden name="price" value="%{price}"></s:hidden>
 				<s:hidden name="stock" value="%{stock}"></s:hidden>
 				<s:token />
