@@ -103,14 +103,10 @@ public class ItemDetailAction extends ActionSupport {
      *
      */
     public String execute() throws SQLException {
-    	//setCommenttest("てすと");
-    	commenttest = "てすとん";
         String result = ERROR;
         ItemDetailDAO dao = new ItemDetailDAO();
         displayList = dao.selectbyItem(itemId);
         commentttt = dao.selectCommentList(itemId);
-        System.out.println(displayList);
-        System.out.println(commentttt);
         if (displayList.size() != 0) {
             result = SUCCESS;
         }

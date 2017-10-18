@@ -41,12 +41,24 @@
 						<s:property escape="false" value="itemDetail" />
 					</div>
 
-
-
 					<div class="tabs-item" id="tab2">
+
+						<s:form action="ItemCommentAction" method="get" name="comments"
+							onClick="return check()">
+							<div class="input-group">
+								<span class="input-group-addon"></span>
+								<textarea name="comment" class="form-control" rows="5" required
+									maxlength="100"></textarea>
+							</div>
+							<s:hidden name="itemId" value="%{displayList.get(0).getItemId()}" />
+							<button type="submit" class="hvr-grow btn btn-success"
+								style="margin-top: 10px;" id="comentBtn">コメントする</button>
+							<s:token />
+						</s:form>
+
 						<div class="panel panel-primary" id="commentarea">
 							<div class="panel-heading" id="commenttitle">コメント</div>
-							<s:iterator value="commentList">
+							<s:iterator value="commentttt">
 								<ul class="list-group">
 									<!--style="text-align: left">-->
 									<li class="list-group-item">
@@ -64,28 +76,12 @@
 							</s:iterator>
 						</div>
 
-						<s:form action="ItemCommentAction" method="get" name="comments"
-							onClick="return check()">
-							<div class="input-group">
-								<span class="input-group-addon"><s:text
-										name="lang.recipe.addcomment" /></span>
-								<textarea name="comment" class="form-control" rows="5" required
-									maxlength="100"></textarea>
-							</div>
-
-							<s:hidden name="itemId" value="%{displayList.get(0).getItemId()}" />
-							<button type="submit" class="hvr-grow btn btn-success"
-								style="margin-top: 10px;" id="comentBtn">コメントする</button>
-							<s:token />
-						</s:form>
 					</div>
-
-
-
 
 				</div>
 
 			</div>
+
 		</s:iterator>
 	</div>
 

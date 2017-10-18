@@ -21,7 +21,7 @@ public class ItemCommentAction extends ActionSupport implements SessionAware {
 	private String userName;
 
 	/**
-	 *  アイテムID
+	 * アイテムID
 	 */
 
 	private int itemId;
@@ -39,6 +39,7 @@ public class ItemCommentAction extends ActionSupport implements SessionAware {
 
 	/**
 	 * コメントを追加するための実行メソッド
+	 *
 	 * @return ユーザー情報が取得 =SUCCESS 失敗 =ERROR
 	 */
 
@@ -48,8 +49,8 @@ public class ItemCommentAction extends ActionSupport implements SessionAware {
 		if (session.containsKey("loginUser")) {
 
 			// ユーザーIDを取得
-			String userName = (String) session.get("name");
 			ItemCommentDAO dao = new ItemCommentDAO();
+			String userName = (String) session.get("name");
 
 			if (dao.insertCommnet(userName, itemId, comment) > 0) {
 				result = SUCCESS;
