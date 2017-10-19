@@ -72,7 +72,7 @@ public class CartDTO {
 
     /**
      * ユーザーIDを格納するメソッド
-     * @param userId セットする userId
+     * @param userId2 セットする userId
      */
     public void setUserId(int userId) {
         this.userId = userId;

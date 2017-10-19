@@ -12,7 +12,7 @@ import com.internousdev.template.util.DBConnector;
 
 public class ItemDetailDAO {
 
-	public ArrayList<ItemDTO> searchList = new ArrayList<ItemDTO>();
+	public ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 
 	public ArrayList<ItemCommentDTO> selectCommentList = new ArrayList<ItemCommentDTO>();
 
@@ -24,7 +24,6 @@ public class ItemDetailDAO {
 		Connection con = db.getConnection();
 		PreparedStatement ps = null;
 		ItemDTO dto = new ItemDTO();
-		ArrayList<ItemDTO> itemList = new ArrayList<ItemDTO>();
 		String sql = "select * from items where item_id=?";
 		try {
 			ps = con.prepareStatement(sql);

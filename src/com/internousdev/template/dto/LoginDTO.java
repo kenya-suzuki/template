@@ -2,6 +2,8 @@ package com.internousdev.template.dto;
 
 public class LoginDTO {
 
+	private int userId;
+
 	private String loginId;
 
 	private String loginPassword;
@@ -9,6 +11,14 @@ public class LoginDTO {
 	private String userName;
 
 	private boolean loginFlg = false;
+
+	public int getUserId(){
+		return userId;
+	}
+
+	public void setUserId(int userId){
+		this.userId = userId;
+	}
 
 	public String getLoginId() {
 		return loginId;
