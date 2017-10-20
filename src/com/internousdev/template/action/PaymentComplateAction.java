@@ -1,6 +1,5 @@
 package com.internousdev.template.action;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -9,7 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class PaymentComplateAction extends ActionSupport implements SessionAware{
 
-	public Map<String,Object> buyItemInfoSession = new HashMap<String, Object>();
+	public Map<String,Object> session;
 
 	public String result;
 
@@ -20,12 +19,13 @@ public class PaymentComplateAction extends ActionSupport implements SessionAware
 	 */
 	public String execute() {
 
+
 		result = SUCCESS;
 		return result;
 	}
 
 	@Override
-	public void setSession(Map<String, Object> buyItemInfoSession) {
-		this.buyItemInfoSession = buyItemInfoSession;
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 	}
 }

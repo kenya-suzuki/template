@@ -4,16 +4,12 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.template.dao.PaymentDAO;
 import com.internousdev.template.dao.LoginDAO;
-import com.internousdev.template.dto.PaymentDTO;
 import com.internousdev.template.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * ログイン認証処理
- * Login.jspからログインID、ログインパスワードを受け取り
- * DBへ問い合わせを行います。
+ * ログイン認証処理 Login.jspからログインID、ログインパスワードを受け取り DBへ問い合わせを行います。
  *
  * @author internous
  * @param loginUserId
@@ -21,7 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
  *
  * @return result
  */
-public class LoginAction extends ActionSupport implements SessionAware{
+public class LoginAction extends ActionSupport implements SessionAware {
 
 	/**
 	 * ログインID
@@ -54,11 +50,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private LoginDTO loginDTO = new LoginDTO();
 
 	/**
-	 * アイテム情報を取得
-	 */
-	public PaymentDAO buyItemDAO = new PaymentDAO();
-
-	/**
 	 * 実行メソッド
 	 */
 	public String execute() {
@@ -71,18 +62,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		session.put("loginUser", loginDTO);
 
 		// ログイン情報を比較
-		if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
+		if (((LoginDTO) session.get("loginUser")).getLoginFlg()) {
 			result = SUCCESS;
-
-			session.remove("cartList");
-			// アイテム情報を取得
-			PaymentDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
 			session.put("userId", loginDTO.getUserId());
 			session.put("login_user_id", loginDTO.getLoginId());
 			session.put("name", loginDTO.getUserName());
-			session.put("id", buyItemDTO.getId());
-			session.put("buyItem_name", buyItemDTO.getItemName());
-			session.put("buyItem_price", buyItemDTO.getItemPrice());
 
 			return result;
 		}

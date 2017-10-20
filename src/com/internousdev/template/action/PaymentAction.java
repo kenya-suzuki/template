@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.template.dao.PaymentDAO;
 import com.internousdev.template.dto.CartDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -15,11 +14,6 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 	public static final String CONFIRM = "confirm";
 
 	public static final String CREDIT = "credit";
-
-	/**
-	 * アイテム情報を取得
-	 */
-	public PaymentDAO buyItemDAO = new PaymentDAO();
 
 	/**
 	 * 数量
