@@ -78,7 +78,7 @@ table {
 		</div>
 		<div>
 			<s:iterator value="CartList">
-				<s:form>
+				<s:form action="PaymentComplateAction">
 					<tr>
 						<td>商品名</td>
 						<td><s:property value="itemName" /></td>
