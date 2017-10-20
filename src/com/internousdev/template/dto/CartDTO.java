@@ -38,13 +38,13 @@ public class CartDTO {
     private String imgPath;
 
     /**
-     * 小計
+     * 合計金額
      */
-    private float subtotal;
+    private int totalPrice;
     /**
      * 在庫数
      */
-    private int stocks;
+    private int stock;
 
     /**
      * カート内商品IDを取得するメソッド
@@ -162,30 +162,30 @@ public class CartDTO {
      * 小計を取得するメソッド
      * @return subtotal
      */
-    public float getSubtotal() {
-        return subtotal;
+    public int getTotalPrice() {
+        return totalPrice;
     }
 
     /**
      * 小計を格納するメソッド
      * @param subtotal セットする subtotal
      */
-    public void setSubtotal(float subtotal) {
-        this.subtotal = subtotal;
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     /**在庫数を取得するメソッド
      * @return stocks
      */
-    public int getStocks() {
-        return stocks;
+    public int getStock() {
+        return stock;
     }
 
     /**在庫数を格納するメソッド
      * @param stocks セットする stocks
      */
-    public void setStocks(int stocks) {
-        this.stocks = stocks;
+    public void setStocks(int stock) {
+        this.stock = stock;
     }
 
 }

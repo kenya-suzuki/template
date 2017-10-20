@@ -28,7 +28,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 	/**
 	 * 単価
 	 */
-	private float price;
+	private int price;
 
 	/**
 	 * 数量
@@ -36,18 +36,14 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 	private int quantities;
 
 	/**
-	 * 小計
-	 */
-	private float subtotal;
-
-	/**
 	 * 在庫数
 	 */
 	private int stock;
 
+	/**
+	 * カートリスト
+	 */
 	private ArrayList<CartDTO> CartList = new ArrayList<CartDTO>();
-
-	private ArrayList<CartDTO> CartList2 = new ArrayList<CartDTO>();
 
 	/**
 	 * セッション情報
@@ -65,57 +61,40 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 				dto.setStocks(stock);
 				dto.setPrice(price);
 				dto.setQuantities(quantities);
+				dto.setTotalPrice(price * quantities);
 				if (session.get("cartList") != null) {
-					CartList2.addAll((ArrayList<CartDTO>)session.get("cartList"));
-					int sizeCount = CartList2.size();
-					int count = -1;
-					for (int i = 0; i < sizeCount; i++) {
-						if (CartList2.get(i).getItemId() == itemId) {
+					CartList = (ArrayList<CartDTO>) session.get("cartList");
+					int cartSize = CartList.size();
+					for (int i = 0; i < cartSize; i++) {
+						if (CartList.get(i).getItemId() == itemId) {
+							int ListIndex = i;
 							CartDTO dto2 = new CartDTO();
-							dto2.setUserId(CartList2.get(i).getUserId());
-							dto2.setItemId(CartList2.get(i).getItemId());
-							dto2.setItemName(CartList2.get(i).getItemName());
-							dto2.setStocks(CartList2.get(i).getStocks());
-							dto2.setPrice(CartList2.get(i).getPrice() + dto.getPrice());
-							dto2.setQuantities(CartList2.get(i).getQuantities() + dto.getQuantities());
-							count = i;
-							CartList.add(dto2);
-							break;
+							dto2.setUserId(CartList.get(ListIndex).getUserId());
+							dto2.setItemId(CartList.get(ListIndex).getItemId());
+							dto2.setItemName(CartList.get(ListIndex).getItemName());
+							dto2.setStocks(CartList.get(ListIndex).getStock());
+							dto2.setPrice(CartList.get(ListIndex).getPrice());
+							dto2.setQuantities(CartList.get(ListIndex).getQuantities() + quantities);
+							dto2.setTotalPrice(CartList.get(ListIndex).getTotalPrice() + price * quantities);
+							if (ListIndex >= 0 && cartSize > 1) {
+								CartList.set(ListIndex, dto2);
+								session.put("cartList", CartList);
+								return SUCCESS;
+							} else if (ListIndex == 0 && cartSize == 1) {
+								CartList.set(ListIndex, dto2);
+								session.put("cartList", CartList);
+								return SUCCESS;
+							}
 						}
 					}
-					for (int j = 0; j < sizeCount; j++) {
-						if (j != count) {
-							CartDTO dto2 = new CartDTO();
-							dto2.setUserId(CartList2.get(j).getUserId());
-							dto2.setItemId(CartList2.get(j).getItemId());
-							dto2.setItemName(CartList2.get(j).getItemName());
-							dto2.setStocks(CartList2.get(j).getStocks());
-							dto2.setPrice(CartList2.get(j).getPrice());
-							dto2.setQuantities(CartList2.get(j).getQuantities());
-							CartList.add(dto2);
-							CartDTO dto3 = new CartDTO();
-							dto3.setUserId(userId);
-							dto3.setItemId(itemId);
-							dto3.setItemName(itemName);
-							dto3.setStocks(stock);
-							dto3.setPrice(price);
-							dto3.setQuantities(quantities);
-							CartList.add(dto3);
-						}else{
-							continue;
-						}
-					}
-
-					session.put("cartList", CartList);
-					return SUCCESS;
 				}
+				CartList.add(dto);
+				session.put("cartList", CartList);
+				return SUCCESS;
 			}
-			CartList.add(dto);
-			session.put("cartList", CartList);
-			return SUCCESS;
-		} else {
 			return ERROR;
 		}
+		return ERROR;
 	}
 
 	public int getUserId() {
@@ -142,11 +121,11 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 		this.itemName = itemName;
 	}
 
-	public float getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(float price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 
@@ -156,14 +135,6 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 
 	public void setQuantities(int quantities) {
 		this.quantities = quantities;
-	}
-
-	public float getSubtotal() {
-		return subtotal;
-	}
-
-	public void setSubtotal(float subtotal) {
-		this.subtotal = subtotal;
 	}
 
 	public int getStock() {
@@ -189,14 +160,6 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 
 	public void setCartList(ArrayList<CartDTO> cartList) {
 		CartList = cartList;
-	}
-
-	public ArrayList<CartDTO> getCartList2() {
-		return CartList2;
-	}
-
-	public void setCartList2(ArrayList<CartDTO> cartList2) {
-		CartList = cartList2;
 	}
 
 }
