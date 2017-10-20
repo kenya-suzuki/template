@@ -6,15 +6,15 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.template.dao.BuyItemDAO;
+import com.internousdev.template.dao.PaymentDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class BuyItemAction extends ActionSupport implements SessionAware {
+public class PaymentAction extends ActionSupport implements SessionAware {
 
 	/**
 	 * アイテム情報を取得
 	 */
-	public BuyItemDAO buyItemDAO = new BuyItemDAO();
+	public PaymentDAO buyItemDAO = new PaymentDAO();
 
 	/**
 	 * アイテム購入個数

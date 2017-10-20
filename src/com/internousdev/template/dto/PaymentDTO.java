@@ -1,6 +1,6 @@
 package com.internousdev.template.dto;
 
-public class BuyItemDTO {
+public class PaymentDTO {
 
 	public int id;
 

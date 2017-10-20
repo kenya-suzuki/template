@@ -7,7 +7,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class BuyItemComplateAction extends ActionSupport implements SessionAware{
+public class PaymentComplateAction extends ActionSupport implements SessionAware{
 
 	public Map<String,Object> buyItemInfoSession = new HashMap<String, Object>();
 

@@ -6,16 +6,16 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.template.dao.BuyItemComplateDAO;
+import com.internousdev.template.dao.PaymentComplateDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
+public class PaymentConfirmAction extends ActionSupport implements SessionAware{
 
 	public Map<String,Object> buyItemInfoSession = new HashMap<String, Object>();
 
 	public String result;
 
-	public BuyItemComplateDAO buyItemComplateDAO = new BuyItemComplateDAO();
+	public PaymentComplateDAO buyItemComplateDAO = new PaymentComplateDAO();
 
 	/**
 	 * 商品購入情報登録メソッド

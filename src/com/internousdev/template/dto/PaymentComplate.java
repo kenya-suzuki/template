@@ -1,5 +1,5 @@
 package com.internousdev.template.dto;
 
-public class BuyItemComplate {
+public class PaymentComplate {
 
 }

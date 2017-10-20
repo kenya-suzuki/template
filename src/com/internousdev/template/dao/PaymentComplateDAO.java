@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import com.internousdev.template.util.DBConnector;
 import com.internousdev.template.util.DateUtil;
 
-public class BuyItemComplateDAO {
+public class PaymentComplateDAO {
 
 	private DBConnector dbConnector = new DBConnector();
 
