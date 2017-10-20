@@ -81,7 +81,15 @@
 
 		<action name="PaymentAction" class="com.internousdev.template.action.PaymentAction"
 			method="execute">
-			<result name="success">payment.jsp</result>
+			<result name="confirm">paymentConfirm.jsp</result>
+			<result name="credit" >credit.jsp</result>
+			<result name="error">sessionError.jsp</result>
+			<result name="login">login.jsp</result>
+		</action>
+
+		<action name="CreditAction"
+			class="com.internousdev.template.action.CreditAction" method="execute">
+			<result name="success">paymentConfirm.jsp</result>
 			<result name="error">login.jsp</result>
 		</action>
 

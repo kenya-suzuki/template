@@ -1,15 +1,20 @@
 
 package com.internousdev.template.action;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.PaymentDAO;
+import com.internousdev.template.dto.CartDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class PaymentAction extends ActionSupport implements SessionAware {
+
+	public static final String CONFIRM = "confirm";
+
+	public static final String CREDIT = "credit";
 
 	/**
 	 * アイテム情報を取得
@@ -17,19 +22,24 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 	public PaymentDAO buyItemDAO = new PaymentDAO();
 
 	/**
-	 * アイテム購入個数
+	 * 数量
 	 */
-	public int count;
+	private int quantities;
 
 	/**
 	 * 支払い方法
 	 */
-	public String pay;
+	public int pay;
 
 	/**
 	 * アイテム情報を格納
 	 */
-	public Map<String, Object>  buyItemInfoMap = new HashMap<>();
+	public Map<String, Object> session;
+
+	/**
+	 * カートリスト
+	 */
+	private ArrayList<CartDTO> CartList = new ArrayList<CartDTO>();
 
 	/**
 	 * 処理結果
@@ -42,44 +52,53 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 	 * @author internous
 	 */
 	public String execute() {
-		result = SUCCESS;
-		buyItemInfoMap.put("count", count);
-		int intCount = Integer.parseInt(buyItemInfoMap.get("count").toString());
-		int intPrice = Integer.parseInt(buyItemInfoMap.get("buyItem_price").toString());
 
-		buyItemInfoMap.put("total_price", intCount * intPrice);
-		String payment;
+		if (session.get("login_user_id") != null) {
+			if (session.get("cartList") != null) {
+				CartList = (ArrayList<CartDTO>) session.get("cartList");
+				int CartSize = CartList.size();
+				for (int i = 0; i < CartSize; i++) {
+					CartList.get(i).setQuantities(quantities);
+					session.put("cartList", CartList);
+				}
+				if (pay == 1) {
+					return CONFIRM;
 
-		if(pay.equals("1")) {
-
-			payment = "現金払い";
-			buyItemInfoMap.put("pay", payment);
-		} else {
-
-			payment = "クレジットカード";
-			buyItemInfoMap.put("pay", payment);
+				} else if (pay == 2) {
+					return CREDIT;
+				}
+			}
+			return ERROR;
 		}
-		return result;
+		return LOGIN;
 	}
 
-	public int getCount() {
-		return count;
+	public int getQuantities() {
+		return quantities;
 	}
 
-	public void setCount(int count) {
-		this.count = count;
+	public void setQuantities(int quantities) {
+		this.quantities = quantities;
 	}
 
-	public String getPay() {
+	public int getPay() {
 		return pay;
 	}
 
-	public void setPay(String pay) {
+	public void setPay(int pay) {
 		this.pay = pay;
 	}
 
 	@Override
-	public void setSession(Map<String, Object> buyItemInfoMap) {
-		this.buyItemInfoMap = buyItemInfoMap;
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+	public ArrayList<CartDTO> getCartList() {
+		return CartList;
+	}
+
+	public void setCartList(ArrayList<CartDTO> cartList) {
+		CartList = cartList;
 	}
 }

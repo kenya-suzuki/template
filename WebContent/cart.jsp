@@ -23,22 +23,17 @@
 
 
 	<div id="main">
-		<div id="top">
-			<p>BuyItem</p>
-		</div>
 		<div>
-			<s:iterator value="CartList">
-				<s:form action="BuyItemAction">
+			<s:form action="PaymentAction">
+				<s:iterator value="CartList">
 					<table>
 						<tr>
 							<td><span>商品名</span></td>
-							<td><s:property value="itemName" /><br>
-							</td>
+							<td><s:property value="itemName" /><br></td>
 						</tr>
 						<tr>
 							<td><span>値段</span></td>
-							<td><s:property value="price" /><span>円</span>
-							</td>
+							<td><s:property value="price" /><span>円</span></td>
 						</tr>
 						<tr>
 							<td><span>購入個数</span></td>
@@ -51,26 +46,24 @@
 									<option value="5">5</option>
 							</select></td>
 						</tr>
-						<tr>
-							<td><span>支払い方法</span></td>
-							<td><input type="radio" name="pay" value="1"
-								checked="checked">現金払い <input type="radio" name="pay"
-								value="2">クレジットカード</td>
-						</tr>
-						<tr>
-							<td><s:submit value="購入" /></td>
-						</tr>
 					</table>
-				</s:form>
-			</s:iterator>
-			<div>
-				<p>
-					前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
-				</p>
-				<p>
-					マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a>
-				</p>
-			</div>
+				</s:iterator>
+				<div>
+					<p>
+						<input type="radio" name="pay" value="1" checked="checked">現金払い
+						<input type="radio" name="pay" value="2">クレジットカード
+					</p>
+					<p class="btn-select position1">
+						<button class="btn buy" type="submit">購入</button>
+					</p>
+					<p>
+						前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
+					</p>
+					<p>
+						マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a>
+					</p>
+				</div>
+			</s:form>
 		</div>
 	</div>
 	<div id="footer">
