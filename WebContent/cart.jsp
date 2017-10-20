@@ -38,7 +38,7 @@
 						<tr>
 							<td><span>購入個数</span></td>
 							<td><s:property value="quantities" /><span>個</span>
-							<td><select name="count">
+							<td><select name="quantities">
 									<option value="1" selected="selected">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -50,8 +50,8 @@
 				</s:iterator>
 				<div>
 					<p>
-						<input type="radio" name="pay" value="1" checked="checked">現金払い
-						<input type="radio" name="pay" value="2">クレジットカード
+						<input type="radio" name="pay" value="現金払い" checked="checked">現金払い
+						<input type="radio" name="pay" value="クレジットカード払い">クレジットカード払い
 					</p>
 					<p class="btn-select position1">
 						<button class="btn buy" type="submit">購入</button>

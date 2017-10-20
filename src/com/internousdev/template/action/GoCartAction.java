@@ -58,7 +58,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 				dto.setUserId(userId);
 				dto.setItemId(itemId);
 				dto.setItemName(itemName);
-				dto.setStocks(stock);
+				dto.setStock(stock);
 				dto.setPrice(price);
 				dto.setQuantities(quantities);
 				dto.setTotalPrice(price * quantities);
@@ -72,7 +72,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 							dto2.setUserId(CartList.get(ListIndex).getUserId());
 							dto2.setItemId(CartList.get(ListIndex).getItemId());
 							dto2.setItemName(CartList.get(ListIndex).getItemName());
-							dto2.setStocks(CartList.get(ListIndex).getStock());
+							dto2.setStock(CartList.get(ListIndex).getStock());
 							dto2.setPrice(CartList.get(ListIndex).getPrice());
 							dto2.setQuantities(CartList.get(ListIndex).getQuantities() + quantities);
 							dto2.setTotalPrice(CartList.get(ListIndex).getTotalPrice() + price * quantities);

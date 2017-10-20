@@ -1,9 +1,11 @@
 package com.internousdev.template.action;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.template.dto.CartDTO;
 import com.internousdev.template.util.CreditUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -45,6 +47,12 @@ public class CreditAction extends ActionSupport implements SessionAware {
 	private Map<String, Object> session;
 
 	/**
+	 * カートリスト
+	 */
+	private ArrayList<CartDTO> CartList = new ArrayList<CartDTO>();
+
+
+	/**
 	 * エラーメッセージ
 	 */
 	private String errmsg2;
@@ -58,6 +66,8 @@ public class CreditAction extends ActionSupport implements SessionAware {
 	 * @return ERROR SUCCESS
 	 */
 	public String execute() {
+
+		CartList = (ArrayList<CartDTO>) session.get("cartList");
 
 		if (session.get("login_user_id") != null) {
 			try {
@@ -128,7 +138,7 @@ public class CreditAction extends ActionSupport implements SessionAware {
 	 *
 	 * @return creditId クレジット種類
 	 */
-	public String getcreditCardType() {
+	public String getCreditCardType() {
 		return creditCardType;
 	}
 
@@ -138,7 +148,7 @@ public class CreditAction extends ActionSupport implements SessionAware {
 	 * @param creditId
 	 *            セット creditId
 	 */
-	public void setcreditCardType(String creditCardType) {
+	public void setCreditCardType(String creditCardType) {
 		this.creditCardType = creditCardType;
 	}
 
@@ -254,6 +264,14 @@ public class CreditAction extends ActionSupport implements SessionAware {
 	 */
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public ArrayList<CartDTO> getCartList() {
+		return CartList;
+	}
+
+	public void setCartList(ArrayList<CartDTO> cartList) {
+		CartList = cartList;
 	}
 
 }

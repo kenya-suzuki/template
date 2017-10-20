@@ -29,7 +29,7 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 	/**
 	 * 支払い方法
 	 */
-	public int pay;
+	public String pay;
 
 	/**
 	 * アイテム情報を格納
@@ -60,11 +60,12 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 				for (int i = 0; i < CartSize; i++) {
 					CartList.get(i).setQuantities(quantities);
 					session.put("cartList", CartList);
+					session.put("pay", pay);
 				}
-				if (pay == 1) {
+				if (pay.equals("現金払い")) {
 					return CONFIRM;
 
-				} else if (pay == 2) {
+				} else if (pay.equals("クレジットカード払い")) {
 					return CREDIT;
 				}
 			}
@@ -81,11 +82,11 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 		this.quantities = quantities;
 	}
 
-	public int getPay() {
+	public String getPay() {
 		return pay;
 	}
 
-	public void setPay(int pay) {
+	public void setPay(String pay) {
 		this.pay = pay;
 	}
 

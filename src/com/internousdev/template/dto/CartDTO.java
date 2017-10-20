@@ -47,6 +47,11 @@ public class CartDTO {
     private int stock;
 
     /**
+     * 支払い方法
+     */
+    private String pay;
+
+	/**
      * カート内商品IDを取得するメソッド
      * @return cartId カート内商品ID
      */
@@ -184,8 +189,16 @@ public class CartDTO {
     /**在庫数を格納するメソッド
      * @param stocks セットする stocks
      */
-    public void setStocks(int stock) {
+    public void setStock(int stock) {
         this.stock = stock;
     }
+
+    public String getPay() {
+		return pay;
+	}
+
+	public void setPay(String pay) {
+		this.pay = pay;
+	}
 
 }
