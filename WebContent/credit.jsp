@@ -42,9 +42,7 @@
 
 
 
-			<h3 class="center">
-				<font color="red">入力された情報に間違いがあります。</font>
-			</h3>
+			<h3 class="center"><font color="red"><s:property value="errmsg2" /></font></h3>
 
 			<s:form action="CreditAction">
 				<table class="payment">
