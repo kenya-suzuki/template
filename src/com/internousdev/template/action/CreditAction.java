@@ -65,6 +65,7 @@ public class CreditAction extends ActionSupport implements SessionAware {
 	 * @version 1.0
 	 * @return ERROR SUCCESS
 	 */
+	@SuppressWarnings("unchecked")
 	public String execute() {
 
 		CartList = (ArrayList<CartDTO>) session.get("cartList");

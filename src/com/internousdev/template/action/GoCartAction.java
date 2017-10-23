@@ -50,6 +50,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 	 */
 	private Map<String, Object> session;
 
+	@SuppressWarnings("unchecked")
 	public String execute() {
 		if (session.get("login_user_id") != null) {
 			CartDTO dto = new CartDTO();
@@ -90,6 +91,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 				}
 				CartList.add(dto);
 				session.put("cartList", CartList);
+
 				return SUCCESS;
 			}
 			return ERROR;

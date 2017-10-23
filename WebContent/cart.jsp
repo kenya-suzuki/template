@@ -38,13 +38,20 @@
 						<tr>
 							<td><span>購入個数</span></td>
 							<td><s:property value="quantities" /><span>個</span>
+						</tr>
+						<tr>
+							<td><span>購入個数変更</span></td>
 							<td><select name="quantities">
-									<option value="1" selected="selected">1</option>
+									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 									<option value="4">4</option>
 									<option value="5">5</option>
 							</select></td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="itemDelete" value="delete">商品削除
+							</td>
 						</tr>
 					</table>
 				</s:iterator>

@@ -18,12 +18,17 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 	/**
 	 * 数量
 	 */
-	private int quantities;
+	private int[] quantities;
 
 	/**
 	 * 支払い方法
 	 */
 	public String pay;
+
+	/**
+	 * 商品削除
+	 */
+	public String[] itemDelete;
 
 	/**
 	 * アイテム情報を格納
@@ -45,6 +50,7 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 	 *
 	 * @author internous
 	 */
+	@SuppressWarnings("unchecked")
 	public String execute() {
 
 		if (session.get("login_user_id") != null) {
@@ -52,10 +58,18 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 				CartList = (ArrayList<CartDTO>) session.get("cartList");
 				int CartSize = CartList.size();
 				for (int i = 0; i < CartSize; i++) {
-					CartList.get(i).setQuantities(quantities);
-					session.put("cartList", CartList);
-					session.put("pay", pay);
+						CartDTO dto = new CartDTO();
+						dto.setUserId(CartList.get(i).getUserId());
+						dto.setItemId(CartList.get(i).getItemId());
+						dto.setItemName(CartList.get(i).getItemName());
+						dto.setStock(CartList.get(i).getStock());
+						dto.setPrice(CartList.get(i).getPrice());
+						dto.setQuantities(quantities[i]);
+						dto.setTotalPrice(CartList.get(i).getTotalPrice());
+						CartList.set(i, dto);
 				}
+				session.put("cartList", CartList);
+				session.put("pay", pay);
 				if (pay.equals("現金払い")) {
 					return CONFIRM;
 
@@ -68,11 +82,11 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 		return LOGIN;
 	}
 
-	public int getQuantities() {
+	public int[] getQuantities() {
 		return quantities;
 	}
 
-	public void setQuantities(int quantities) {
+	public void setQuantities(int[] quantities) {
 		this.quantities = quantities;
 	}
 
@@ -82,6 +96,14 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 
 	public void setPay(String pay) {
 		this.pay = pay;
+	}
+
+	public String[] getItemDelete() {
+		return itemDelete;
+	}
+
+	public void setItemDelete(String[] itemDelete) {
+		this.itemDelete = itemDelete;
 	}
 
 	@Override
