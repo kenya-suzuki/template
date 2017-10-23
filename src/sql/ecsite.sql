@@ -34,10 +34,11 @@ drop table if exists user_buy_item_transaction;
 
 create table user_buy_item_transaction(
 id int not null primary key auto_increment,
+user_master_id int,
 item_transaction_id int,
-total_price int,
+item_transaction_name varchar(16),
 total_count int,
-user_master_id varchar(16),
+total_price int,
 pay varchar(30),
 insert_date datetime,
 delete_date datetime
