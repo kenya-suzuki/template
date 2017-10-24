@@ -7,31 +7,42 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="css/#.css">
+<!--<link rel="stylesheet" href="css/#.css">-->
 <body>
 
 	<!-- header -->
 	<s:include value="header.jsp" />
 	<!-- header end -->
 
+	<script type="text/javascript" src="js/jquery.adaptive-backgrounds.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.adaptiveBackground.run();
+		});
+	</script>
+
 	<s:iterator value="searchList">
 		<!--　商品１　-->
 		<div class="itemBox">
 			<ul id="nav">
-				<li><a
+				<li data-ab-css-background='1'><a
 					href="<s:url action="ItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
-						<img src="img/<s:property value="itemImage"/>" alt="" />
+						<img src="img/<s:property value="itemImage"/>" alt=""
+						data-adaptive-background='1' />
 				</a></li>
 			</ul>
 			<div class="itemName">
-				<h4><s:property value="itemName" />  /  <s:property value="author" /></h4>
+				<h4>
+					<s:property value="itemName" />
+					/
+					<s:property value="author" />
+				</h4>
 			</div>
 		</div>
 	</s:iterator>
 
 
-
-	<script src="js/jquery.fadethis.min.js"></script>
+	<!--<script src="js/jquery.fadethis.min.js"></script>
 	<script>
 		$(function() {
 			$(window).load(function() {
@@ -47,7 +58,7 @@
 				});
 			});
 		});
-	</script>
+	</script>-->
 
 </body>
 </html>
