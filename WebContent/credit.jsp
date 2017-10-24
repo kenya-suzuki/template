@@ -19,7 +19,6 @@
 
 	<div class="container">
 
-
 		<!--<div id="step_bar_box">
 			<ol class="step_bar">
 				<li class="visited"><s:text name="lang.payment.date" /></li>
@@ -30,23 +29,14 @@
 		</div>-->
 		<!-- step_bar_box end -->
 
-
-
-
-
 		<h1 class="center">クレジット情報を入力してください。</h1>
 
-
-
 		<div class="formarea">
-
-
 
 			<h3 class="center"><font color="red"><s:property value="errmsg2" /></font></h3>
 
 			<s:form action="CreditAction">
 				<table class="payment">
-
 					<tr>
 						<td>クレジットカード種類</td>
 						<td><input type="radio" name="creditCardType" value="visa"
