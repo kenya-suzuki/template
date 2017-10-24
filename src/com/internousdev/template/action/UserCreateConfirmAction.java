@@ -1,6 +1,5 @@
 package com.internousdev.template.action;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -20,7 +19,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 	public String userName;
 
-	public Map<String,Object> createUserSession = new HashMap<String, Object>();
+	public Map<String, Object> session;
 
 	public String result;
 
@@ -30,10 +29,10 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 		result = SUCCESS;
 
-		if(!(loginUserId.equals("")) && !(loginPassword.equals("")) && !(userName.equals(""))) {
-			createUserSession.put("loginUserId", loginUserId);
-			createUserSession.put("loginPassword", loginPassword);
-			createUserSession.put("userName", userName);
+		if (!(loginUserId.equals("")) && !(loginPassword.equals("")) && !(userName.equals(""))) {
+			session.put("loginUserId", loginUserId);
+			session.put("loginPassword", loginPassword);
+			session.put("userName", userName);
 		} else {
 
 			errorMassage = "未入力の項目があります。";
@@ -69,6 +68,6 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 	@Override
 	public void setSession(Map<String, Object> createUserSession) {
-		this.createUserSession = createUserSession;
+		this.session = createUserSession;
 	}
 }

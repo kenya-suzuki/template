@@ -12,6 +12,16 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CreditAction extends ActionSupport implements SessionAware {
 
 	/**
+	 * 数量
+	 */
+	private int[] quantities;
+
+	/**
+	 * 支払い方法
+	 */
+	public String pay;
+
+	/**
 	 * クレジット種類
 	 */
 	private String creditCardType;
@@ -51,7 +61,6 @@ public class CreditAction extends ActionSupport implements SessionAware {
 	 */
 	private ArrayList<CartDTO> CartList = new ArrayList<CartDTO>();
 
-
 	/**
 	 * エラーメッセージ
 	 */
@@ -73,20 +82,14 @@ public class CreditAction extends ActionSupport implements SessionAware {
 		if (session.get("login_user_id") != null) {
 			try {
 				if (creditNumber.length() >= 6) {
-
 					CreditUtil util = new CreditUtil(creditCardType, creditNumber);
-
 					if (util.brandCheck()) {
-
 						if (securityCode.startsWith("123")) {
-
 							if (util.creditCheck(securityCode, expirationYear, expirationMonth, nameE)) {
 								
 								return SUCCESS;
-
 							} else {
 								errmsg2 = "*入力された情報に間違いがあります。";
-
 								return ERROR;
 							}
 						} else if (securityCode.startsWith("00")) {
@@ -94,18 +97,14 @@ public class CreditAction extends ActionSupport implements SessionAware {
 								return SUCCESS;
 							} else {
 								errmsg2 = "*入力された情報に間違いがあります。";
-
 								return ERROR;
 							}
-
 						} else {
 							errmsg2 = "*入力された情報に間違いがあります。";
-
 							return ERROR;
 						}
 					} else {
 						errmsg2 = "*入力された情報に間違いがあります。";
-
 						return ERROR;
 					}
 				}
@@ -114,6 +113,22 @@ public class CreditAction extends ActionSupport implements SessionAware {
 			}
 		}
 		return LOGIN;
+	}
+
+	public int[] getQuantities() {
+		return quantities;
+	}
+
+	public void setQuantities(int[] quantities) {
+		this.quantities = quantities;
+	}
+
+	public String getPay() {
+		return pay;
+	}
+
+	public void setPay(String pay) {
+		this.pay = pay;
 	}
 
 	/**
