@@ -17,14 +17,12 @@
 	<s:include value="header.jsp" />
 	<!-- header end -->
 
-	<div>
+	<div class="main_top">
 		<s:iterator value="displayList">
 
 			<div class="item-imgs">
-				<a
-					href="<s:url action="ItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
-					<img class="item-img" src="img/<s:property value="itemImage"/>"
-					alt="" />
+				<a href="#"> <img class="item-img"
+					src="img/<s:property value="itemImage"/>" alt="" />
 				</a>
 			</div>
 			<div class="itemName">
@@ -67,15 +65,18 @@
 			<div class="tabs">
 
 				<ul class="tabs__menu">
-					<li class="tabs__menu_li"><a href="#tab1">Product
+					<li class="tabs__menu_li"><a class="toptab" href="#tab1">Product
 							Information</a></li>
-					<li class="tabs__menu_li"><a href="#tab2">comment</a></li>
+					<li class="tabs__menu_li"><a class="toptab" href="#tab2">comment</a></li>
 				</ul>
 
 				<div class="tabs__content">
 
 					<div class="tabs-item" id="tab1">
-						<s:property value="itemddd" />
+						<div class="itemd">
+							商品説明： <br>
+							<s:property value="itemddd" />
+						</div>
 					</div>
 
 					<div class="tabs-item" id="tab2">
@@ -98,13 +99,13 @@
 								<ul class="list-group">
 									<!--style="text-align: left">-->
 									<li class="list-group-item">
-										<div style="font-weight: bold">
+										<div class="comment_item" style="font-weight: bold">
 											<s:property value="userName" />
 										</div>
-										<div style="word-wrap: break-word;">
+										<div class="comment_item" style="word-wrap: break-word;">
 											<s:property value="comment" />
 										</div>
-										<div>
+										<div class="comment_item" id="comment_reg">
 											<s:property value="registrationDate" />
 										</div>
 									</li>

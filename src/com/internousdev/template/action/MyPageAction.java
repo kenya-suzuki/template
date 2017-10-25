@@ -55,8 +55,8 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		}
 
 		// 商品履歴を削除しない場合
-		if(deleteFlg.equals("")) {
-			String item_transaction_id = session.get("id").toString();
+		//if(deleteFlg.equals("")) {
+			String item_transaction_id = session.get("userId").toString();
 			String user_master_id = session.get("login_user_id").toString();
 
 			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
@@ -66,9 +66,9 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 				myPageList = null;
 			}
 		// 商品履歴を削除する場合
-		} else if(deleteFlg.equals("1")) {
-			delete();
-		}
+		//} else if(deleteFlg.equals("1")) {
+		//	delete();
+		//}
 
 		result = SUCCESS;
 		return result;
