@@ -6,71 +6,76 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/credit.css">
 </head>
 <body>
 
-	<!-- header_login -->
-	<s:include value="header.jsp" />
-	<!-- header_login end -->
-
-
-
-
-
 	<div class="container">
-
-		<!--<div id="step_bar_box">
-			<ol class="step_bar">
-				<li class="visited"><s:text name="lang.payment.date" /></li>
-				<li class="current"><s:text name="lang.payment.number" /></li>
-				<li><s:text name="lang.payment.check" /></li>
-				<li><s:text name="lang.payment.completion" /></li>
-			</ol>
-		</div>-->
-		<!-- step_bar_box end -->
-
-		<h1 class="center">クレジット情報を入力してください。</h1>
-
-		<div class="formarea">
-
-			<h3 class="center"><font color="red"><s:property value="errmsg2" /></font></h3>
-
-			<s:form action="CreditAction">
-				<table class="payment">
-					<tr>
-						<td>クレジットカード種類</td>
-						<td><input type="radio" name="creditCardType" value="visa"
-							checked="checked">visa <input type="radio"
-							name="creditCardType" value="mastercard">mastercard <input
-							type="radio" name="creditCardType" value="americanexpress"
-							checked="checked">americanexpress</td>
-					</tr>
-					<tr>
-						<td>クレジット番号<br> 半角数字
-						</td>
-						<td><input type="text" name="creditNumber" />
-							<div class="example">例）4111111111111112</div></td>
-					</tr>
-					<tr>
-						<td>カード名義</td>
-						<td><input type="text" name="nameE" /></td>
-					</tr>
-					<tr>
-						<td>カード期限</td>
-						<td><select id="month" name="expirationMonth">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
+		<div class="price">
+			<h1>Awesome, that's $99.99 !</h1>
+		</div>
+		<s:form action="CreditAction">
+			<div class="card__container">
+				<div class="card">
+					<div class="row paypal">
+						<div class="left">
+							<input id="pp" type="radio" name="payment" />
+							<div class="radio"></div>
+							<label for="pp">Paypal</label>
+						</div>
+						<div class="right">
+							<img src="http://i68.tinypic.com/2rwoj6s.png" alt="paypal" />
+						</div>
+					</div>
+					<div class="row credit">
+						<div class="right">
+							<img src="http://i66.tinypic.com/5knfq8.png" alt="visa" /> <input
+								type="radio" name="creditCardType" value="visa"
+								checked="checked">
+							<div class="mozi">visa</div>
+							<img src="http://i67.tinypic.com/14y4p1.png" alt="mastercard" />
+							<input type="radio" name="creditCardType" value="mastercard">
+							<div class="mozi">mastercard</div>
+							<img src="http://i63.tinypic.com/1572ot1.png" alt="amex" /> <input
+								type="radio" name="creditCardType" value="americanexpress"
+								checked="checked">
+							<div class="mozi">americanexpress</div>
+						</div>
+					</div>
+					<div class="row cardholder">
+						<div class="info">
+							<label for="cardholdername">Name</label> <input
+								placeholder="e.g. Richard Bovell" id="cardholdername"
+								type="text" name="nameE" />
+						</div>
+					</div>
+					<div class="row number">
+						<div class="info">
+							<label for="cardnumber">Card number</label> <input
+								id="cardnumber" type="text" name="creditNumber"
+								pattern="[0-9]{16,19}" maxlength="19"
+								placeholder="8888-8888-8888-8888" />
+						</div>
+					</div>
+					<div class="row details">
+						<div class="left">
+							<label for="expiry-date">Expiry</label> <select id="expiry-date"
+								name="expirationMonth">
+								<option>MM</option>
+								<option value="1">01</option>
+								<option value="2">02</option>
+								<option value="3">03</option>
+								<option value="4">04</option>
+								<option value="5">05</option>
+								<option value="6">06</option>
+								<option value="7">07</option>
+								<option value="8">08</option>
+								<option value="9">10</option>
 								<option value="11">11</option>
 								<option value="12">12</option>
-						</select> 月 <select id="year" name="expirationYear">
+							</select> <span>/</span> <select id="expiry-date" name="expirationYear">
+								<option>YYYY</option>
+								<option value="2016">2016</option>
 								<option value="2017">2017</option>
 								<option value="2018">2018</option>
 								<option value="2019">2019</option>
@@ -81,23 +86,28 @@
 								<option value="2024">2024</option>
 								<option value="2025">2025</option>
 								<option value="2026">2026</option>
-						</select> 年 <br>
-							<div id="dateError"></div></td>
-					</tr>
-					<tr>
-						<td>セキュリティーコード</td>
-						<td><input type="password" name="securityCode" size="6" />
-							<div class="example">例）123</div></td>
-					</tr>
-				</table>
-				<br>
-				<br>
-				<input type="submit" value="確認画面" id=" CheckCreditInfomation"
-					class="btn back" />
-			</s:form>
-
-		</div>
-
+								<option value="2027">2027</option>
+								<option value="2028">2028</option>
+								<option value="2029">2029</option>
+								<option value="2030">2030</option>
+							</select>
+						</div>
+						<div class="right">
+							<label for="cvv">CVC/CVV</label> <input type="text"
+								name="securityCode" maxlength="4" placeholder="123" /> <span
+								data-balloon-length="medium"
+								data-balloon="The 3 or 4-digit number on the back of your card."
+								data-balloon-pos="up">i</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="button">
+				<button type="submit">
+					<i class="ion-locked"></i> Confirm and Pay
+				</button>
+			</div>
+		</s:form>
 	</div>
 
 </body>
