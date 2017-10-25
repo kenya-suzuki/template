@@ -12,8 +12,11 @@
 
 	<div class="container">
 		<div class="price">
-			<h1>Awesome, that's $99.99 !</h1>
+			<h1>Awesome, that's <s:property value="session.cartList.totalPrice" /></h1>
 		</div>
+		<h3 class="center">
+			<font color="red"><s:property value="errmsg2" /></font>
+		</h3>
 		<s:form action="CreditAction">
 			<div class="card__container">
 				<div class="card">

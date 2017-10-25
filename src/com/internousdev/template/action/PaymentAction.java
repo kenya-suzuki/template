@@ -64,7 +64,7 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 						dto.setItemName(CartList.get(i).getItemName());
 						dto.setStock(CartList.get(i).getStock());
 						dto.setPrice(CartList.get(i).getPrice());
-						dto.setQuantities(quantities[i]);
+						dto.setQuantities(quantities[i] + CartList.get(i).getQuantities());
 						dto.setTotalPrice(CartList.get(i).getTotalPrice());
 						CartList.set(i, dto);
 				}

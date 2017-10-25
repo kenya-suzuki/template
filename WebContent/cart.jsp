@@ -40,8 +40,9 @@
 							<td><s:property value="quantities" /><span>個</span>
 						</tr>
 						<tr>
-							<td><span>購入個数変更</span></td>
+							<td><span>購入個数追加</span></td>
 							<td><select name="quantities">
+									<option value="0">変更</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>

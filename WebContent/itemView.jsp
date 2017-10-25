@@ -14,12 +14,12 @@
 	<s:include value="header.jsp" />
 	<!-- header end -->
 
-	<script type="text/javascript" src="js/jquery.adaptive-backgrounds.js"></script>
+	<!--<script type="text/javascript" src="js/jquery.adaptive-backgrounds.js"></script>
 	<script>
 		$(document).ready(function() {
 			$.adaptiveBackground.run();
 		});
-	</script>
+	</script>-->
 
 	<s:iterator value="searchList">
 		<!--　商品１　-->
@@ -42,7 +42,7 @@
 	</s:iterator>
 
 
-	<!--<script src="js/jquery.fadethis.min.js"></script>
+	<script src="js/jquery.fadethis.min.js"></script>
 	<script>
 		$(function() {
 			$(window).load(function() {
@@ -58,7 +58,7 @@
 				});
 			});
 		});
-	</script>-->
+	</script>
 
 </body>
 </html>
