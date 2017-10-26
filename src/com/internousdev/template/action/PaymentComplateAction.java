@@ -23,7 +23,7 @@ public class PaymentComplateAction extends ActionSupport implements SessionAware
 	 *
 	 * @author internous
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked" })
 	public String execute() {
 
 		CartList = (ArrayList<CartDTO>) session.get("cartList");
@@ -43,7 +43,7 @@ public class PaymentComplateAction extends ActionSupport implements SessionAware
 				e.printStackTrace();
 			}
 		}
-		for (int i = 0; i < CartSize; i++) {
+		for (int j = 0; j < CartSize; j++) {
 			CartList.remove(0);
 		}
 

@@ -26,35 +26,38 @@
 		<div>
 			<s:form action="PaymentAction">
 				<s:iterator value="CartList">
-					<table>
-						<tr>
-							<td><span>商品名</span></td>
-							<td><s:property value="itemName" /><br></td>
-						</tr>
-						<tr>
-							<td><span>値段</span></td>
-							<td><s:property value="price" /><span>円</span></td>
-						</tr>
-						<tr>
-							<td><span>購入個数</span></td>
-							<td><s:property value="quantities" /><span>個</span>
-						</tr>
-						<tr>
-							<td><span>購入個数追加</span></td>
-							<td><select name="quantities">
-									<option value="0">変更</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-							</select></td>
-						</tr>
-						<tr>
-							<td><input type="radio" name="itemDelete" value="delete">商品削除
-							</td>
-						</tr>
-					</table>
+					<s:if test="itemName != null">
+						<table>
+							<tr>
+								<td><span>商品名</span></td>
+								<td><s:property value="itemName" /><br></td>
+							</tr>
+							<tr>
+								<td><span>値段</span></td>
+								<td><s:property value="price" /><span>円</span></td>
+							</tr>
+							<tr>
+								<td><span>購入個数</span></td>
+								<td><s:property value="quantities" /><span>個</span>
+							</tr>
+							<tr>
+								<td><span>購入個数追加</span></td>
+								<td><select name="quantities">
+										<option value="0">変更</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+								</select></td>
+							</tr>
+							<tr>
+								<td><button class="delete_btn" type="submit"
+										name="itemDelete" value="<s:property value="itemId" />">商品削除</button>
+								</td>
+							</tr>
+						</table>
+					</s:if>
 				</s:iterator>
 				<div>
 					<p>
@@ -72,6 +75,11 @@
 					</p>
 				</div>
 			</s:form>
+			<s:else>
+				<div>
+					<h1>カートは空です。</h1>
+				</div>
+			</s:else>
 		</div>
 	</div>
 	<div id="footer">
