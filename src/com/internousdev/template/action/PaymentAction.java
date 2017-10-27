@@ -31,6 +31,11 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 	public int itemDelete;
 
 	/**
+	 * 処理結果
+	 */
+	public String result;
+
+	/**
 	 * アイテム情報を格納
 	 */
 	public Map<String, Object> session;
@@ -39,11 +44,6 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 	 * カートリスト
 	 */
 	private ArrayList<CartDTO> CartList = new ArrayList<CartDTO>();
-
-	/**
-	 * 処理結果
-	 */
-	public String result;
 
 	/**
 	 * 商品情報取得メソッド
@@ -68,8 +68,8 @@ public class PaymentAction extends ActionSupport implements SessionAware {
 						dto.setQuantities(quantities[i] + CartList.get(i).getQuantities());
 						dto.setTotalPrice(CartList.get(i).getTotalPrice());
 						CartList.set(i, dto);
-					}else{
-						if(CartList.get(i).getItemId() == itemDelete){
+					} else {
+						if (CartList.get(i).getItemId() == itemDelete) {
 							CartList.remove(i);
 							return NONE;
 						}
