@@ -50,6 +50,9 @@ public class ItemDetailDAO {
 		return itemList;
 	}
 
+	/**
+	 * コメントを取得するメソッド
+	 */
 	public ArrayList<ItemCommentDTO> selectCommentList(int itemId) {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();

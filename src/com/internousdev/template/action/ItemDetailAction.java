@@ -56,7 +56,7 @@ public class ItemDetailAction extends ActionSupport {
 	/**
 	 * 商品一覧表示用リスト
 	 */
-	private ArrayList<ItemCommentDTO> commentttt = new ArrayList<ItemCommentDTO>();
+	private ArrayList<ItemCommentDTO> commentList = new ArrayList<ItemCommentDTO>();
 
 	/**
 	 * セッション
@@ -71,7 +71,7 @@ public class ItemDetailAction extends ActionSupport {
 		String result = ERROR;
 		ItemDetailDAO dao = new ItemDetailDAO();
 		displayList = dao.selectbyItem(itemId);
-		commentttt = dao.selectCommentList(itemId);
+		commentList = dao.selectCommentList(itemId);
 		if (displayList.size() != 0) {
 			result = SUCCESS;
 		}
@@ -152,8 +152,8 @@ public class ItemDetailAction extends ActionSupport {
 	 *
 	 * @return displayList 商品一覧表示用リスト
 	 */
-	public ArrayList<ItemCommentDTO> getCommentttt() {
-		return this.commentttt;
+	public ArrayList<ItemCommentDTO> getCommentList() {
+		return this.commentList;
 	}
 
 	/**
@@ -162,8 +162,8 @@ public class ItemDetailAction extends ActionSupport {
 	 * @param displayList
 	 *            セットする displayList
 	 */
-	public void setCommentttt(ArrayList<ItemCommentDTO> commentttt) {
-		this.commentttt = commentttt;
+	public void setCommentList(ArrayList<ItemCommentDTO> commentList) {
+		this.commentList = commentList;
 	}
 
 	/**

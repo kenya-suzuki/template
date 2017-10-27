@@ -95,7 +95,7 @@
 
 						<div class="panel panel-primary" id="commentarea">
 							<div class="panel-heading" id="commenttitle">comments</div>
-							<s:iterator value="commentttt">
+							<s:iterator value="commentList">
 								<ul class="list-group">
 									<!--style="text-align: left">-->
 									<li class="list-group-item">
