@@ -34,7 +34,7 @@ public class PaymentComplateAction extends ActionSupport implements SessionAware
 			String itemName = CartList.get(i).getItemName();
 			int count = CartList.get(i).getQuantities();
 			int price = (int) CartList.get(i).getPrice();
-			int totalPrice = CartList.get(i).getTotalPrice();
+			int totalPrice = count * price;
 			String pay = (String) session.get("pay");
 			try {
 				PaymentComplateDAO dao = new PaymentComplateDAO();

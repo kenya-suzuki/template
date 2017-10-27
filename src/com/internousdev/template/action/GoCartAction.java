@@ -52,7 +52,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 
 	@SuppressWarnings("unchecked")
 	public String execute() {
-		if (session.get("login_user_id") == null) {
+		if (session.get("login_user_id") != null) {
 			CartDTO dto = new CartDTO();
 			if (quantities <= stock) {
 				userId = (int) session.get("userId");
