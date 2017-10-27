@@ -25,8 +25,8 @@
 	<div id="main">
 		<div>
 			<s:form action="PaymentAction">
-				<s:iterator value="CartList">
-					<s:if test="itemName != null">
+				<s:if test="CartList != null">
+					<s:iterator value="CartList">
 						<table>
 							<tr>
 								<td><span>商品名</span></td>
@@ -57,23 +57,23 @@
 								</td>
 							</tr>
 						</table>
-					</s:if>
-				</s:iterator>
-				<div>
-					<p>
-						<input type="radio" name="pay" value="現金払い" checked="checked">現金払い
-						<input type="radio" name="pay" value="クレジットカード払い">クレジットカード払い
-					</p>
-					<p class="btn-select position1">
-						<button class="btn buy" type="submit">購入</button>
-					</p>
-					<p>
-						前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
-					</p>
-					<p>
-						マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a>
-					</p>
-				</div>
+					</s:iterator>
+					<div>
+						<p>
+							<input type="radio" name="pay" value="現金払い" checked="checked">現金払い
+							<input type="radio" name="pay" value="クレジットカード払い">クレジットカード払い
+						</p>
+						<p class="btn-select position1">
+							<button class="btn buy" type="submit">購入</button>
+						</p>
+						<p>
+							前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
+						</p>
+						<p>
+							マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a>
+						</p>
+					</div>
+				</s:if>
 			</s:form>
 			<s:else>
 				<div>

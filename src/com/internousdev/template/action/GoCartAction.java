@@ -52,7 +52,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 
 	@SuppressWarnings("unchecked")
 	public String execute() {
-		if (session.get("login_user_id") != null) {
+		if (session.get("login_user_id") == null) {
 			CartDTO dto = new CartDTO();
 			if (quantities <= stock) {
 				userId = (int) session.get("userId");
@@ -77,11 +77,7 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 							dto2.setPrice(CartList.get(ListIndex).getPrice());
 							dto2.setQuantities(CartList.get(ListIndex).getQuantities() + quantities);
 							dto2.setTotalPrice(CartList.get(ListIndex).getTotalPrice() + price * quantities);
-							if (ListIndex >= 0 && cartSize > 1) {
-								CartList.set(ListIndex, dto2);
-								session.put("cartList", CartList);
-								return SUCCESS;
-							} else if (ListIndex == 0 && cartSize == 1) {
+							if (ListIndex >= 0 && cartSize >= 1) {
 								CartList.set(ListIndex, dto2);
 								session.put("cartList", CartList);
 								return SUCCESS;
@@ -91,7 +87,6 @@ public class GoCartAction extends ActionSupport implements SessionAware {
 				}
 				CartList.add(dto);
 				session.put("cartList", CartList);
-
 				return SUCCESS;
 			}
 			return ERROR;
