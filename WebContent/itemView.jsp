@@ -6,8 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="css/itemView.css">
+
 </head>
-<!--<link rel="stylesheet" href="css/#.css">-->
 <body>
 
 	<!-- header -->
@@ -24,20 +26,20 @@
 	<s:iterator value="searchList">
 		<!--　商品１　-->
 		<div class="itemBox">
-			<ul id="nav">
+			<ul class="item_img" id="nav">
 				<li data-ab-css-background='1'><a
 					href="<s:url action="ItemDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>">
 						<img src="img/<s:property value="itemImage"/>" alt=""
 						data-adaptive-background='1' />
 				</a></li>
+				<li>
+					<h4>
+						<s:property value="itemName" />
+						/
+						<s:property value="author" />
+					</h4>
+				</li>
 			</ul>
-			<div class="itemName">
-				<h4>
-					<s:property value="itemName" />
-					/
-					<s:property value="author" />
-				</h4>
-			</div>
 		</div>
 	</s:iterator>
 

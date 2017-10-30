@@ -83,7 +83,7 @@
 			method="execute">
 			<result name="confirm">paymentConfirm.jsp</result>
 			<result name="credit">credit.jsp</result>
-			<result name="none">System_cart.jsp</result>
+			<result name="none">cart.jsp</result>
 			<result name="error">sessionError.jsp</result>
 			<result name="login">login.jsp</result>
 		</action>

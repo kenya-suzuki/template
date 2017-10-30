@@ -30,3 +30,19 @@ ul {
 	display: inline-block;
 	/*overflow: hidden;*/
 }
+
+.itemBox {
+
+}
+
+.item_img {
+	margin-left: 250px;
+	margin-top: 100px;
+}
+
+img{
+}
+
+h4{
+	text-align: center;
+}

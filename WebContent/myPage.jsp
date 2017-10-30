@@ -32,6 +32,10 @@ table {
 	margin: 0 auto;
 }
 
+h3 {
+	padding-top: 50px;
+}
+
 /* ========ID LAYOUT======== */
 #top {
 	width: 780px;
@@ -65,13 +69,11 @@ table {
 </style>
 </head>
 <body>
-	<div id="header">
-		<div id="pr"></div>
-	</div>
+	<!-- header -->
+	<s:include value="header.jsp" />
+	<!-- header end -->
 	<div id="main">
-		<div id="top">
-			<p>MyPage</p>
-		</div>
+
 		<div>
 			<s:if test="myPageList.size() == 0">
 				<h3>ご購入情報はありません。</h3>
@@ -117,8 +119,6 @@ table {
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<div id="pr"></div>
-	</div>
+
 </body>
 </html>

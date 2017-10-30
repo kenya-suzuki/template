@@ -25,7 +25,7 @@
 	<div id="main">
 		<div>
 			<s:form action="PaymentAction">
-				<s:if test="CartList != null">
+				<s:if test="CartList.size() != 0">
 					<s:iterator value="CartList">
 						<table>
 							<tr>
@@ -74,12 +74,13 @@
 						</p>
 					</div>
 				</s:if>
+				<s:else>
+					<div>
+						<h1>カートは空です。</h1>
+					</div>
+				</s:else>
 			</s:form>
-			<s:else>
-				<div>
-					<h1>カートは空です。</h1>
-				</div>
-			</s:else>
+
 		</div>
 	</div>
 	<div id="footer">
