@@ -23,6 +23,8 @@
 		$('form').submit();
 	}
 </script>
+
+<link rel="stylesheet" href="css/paymentConfirm.css">
 </head>
 <body>
 	<!-- header -->
@@ -34,36 +36,36 @@
 		</div>
 		<div>
 			<s:form action="PaymentComplateAction">
-				<s:iterator value="CartList">
+				<table>
 					<tr>
 						<td>商品名</td>
-						<td><s:property value="itemName" /></td>
-					</tr>
-					<tr>
 						<td>値段</td>
-						<td><s:property value="price" /><span>円</span></td>
+						<td>購入個数</td>
+					</tr>
+					<s:iterator value="CartList">
+						<tr>
+							<td><s:property value="itemName" /></td>
+							<td><s:property value="price" /><span>円</span></td>
+							<td><s:property value="quantities" /><span>個</span></td>
+						</tr>
+					</s:iterator>
+					<tr>
+						<td><br></td>
 					</tr>
 					<tr>
-						<td>購入個数</td>
-						<td><s:property value="quantities" /><span>個</span></td>
+						<td>支払い方法</td>
+						<td><s:property value="session.pay" /></td>
 					</tr>
-				</s:iterator>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td>支払い方法</td>
-					<td><s:property value="session.pay" /></td>
-				</tr>
-				<tr>
-					<td><br></td>
-				</tr>
-				<tr>
-					<td><input type="button" value="戻る"
-						onclick="submitAction('HomeAction')" /></td>
-					<td><input type="button" value="完了"
-						onclick="submitAction('PaymentComplateAction')" /></td>
-				</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td><input type="button" value="戻る"
+							onclick="submitAction('HomeAction')" /></td>
+						<td><input type="button" value="完了"
+							onclick="submitAction('PaymentComplateAction')" /></td>
+					</tr>
+				</table>
 			</s:form>
 		</div>
 	</div>

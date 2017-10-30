@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+body {
+	font: 14px Arial, sans-serif;
+	color: #eee;
+	margin: 0px;
+}
+
+.nav-wrap {
+	margin: 0px;
+	padding: 20px 0px 20px 40px;
+	background-color: dimgrey;
+	width: 100%;
+	position: fixed;
+}
+
+/* Clearfix */
+*:first-child+html .group {
+	zoom: 1;
+} /* IE7 */
+
+/* Example One */
+#example-one {
+	margin: 0 auto;
+	list-style: none;
+	position: relative;
+	width: auto;
+}
+
+#example-one li {
+	display: inline-block;
+	margin-right: 50px;
+}
+
+#example-one a {
+	color: #bbb;
+	font-size: 14px;
+	float: left;
+	padding: 6px 0px 4px 0px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#example-one a:hover {
+	color: #ee7474;
+}
+
+#magic-line {
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100px;
+	height: 2px;
+	background: #ee7474;
+}
+
+.current_page_item a {
+	color: #ee7474 !important;
+}
+
+.ie6 #example-one li, .ie7 #example-one li {
+	display: inline;
+}
+
+.ie6 #magic-line {
+	bottom: -3px;
+}
+
+/*  CONTAINER SECTIONS
+--------------------------- */
+.left-sections {
+	width: 100%;
+	height: 300px;
+}
+
+.l-1 {
+	padding-top: 130px;
+}
+
+.l-1, .l-3 {
+	background-color: #ccc;
+}
+
+.l-2 {
+	background-color: #666;
+}
+
+.left-sections .container {
+	width: 80%;
+	height: auto;
+	margin-left: 40px; a { //text-decoration : none;
+	color: #eee;
+	text-transform: uppercase; //
+	background-color: #fff;
+	padding: 5px;
+	transition: 0.3s; &: hover { background-color : #000;
+	color: #fff;
+	transition: 0.3s;
+}
+}
+}

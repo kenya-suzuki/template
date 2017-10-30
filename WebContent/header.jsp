@@ -18,14 +18,27 @@
 </script>
 </head>
 <body>
-	<div class="entirebody">
-		<ul class="mainnav">
-			<li><a href="<s:url action="GoHomeAction" />">Home</a></li>
-			<li><a
-				href='<s:url action="ItemViewAction"><s:param name="categoryId" value="%{'1'}"/></s:url>'>Product</a></li>
-			<li><a href="<s:url action="MyPageAction" />">My page</a></li>
-			<li><a href="login.jsp" >Login</a></li>
-		</ul>
-	</div>
+	<s:if test="#session.userId == null">
+		<div class="entirebody">
+			<ul class="mainnav">
+				<li><a href="<s:url action="GoHomeAction" />">Home</a></li>
+				<li><a
+					href='<s:url action="ItemViewAction"><s:param name="categoryId" value="%{'1'}"/></s:url>'>Product</a></li>
+				<li><a href="<s:url action="MyPageAction" />">My page</a></li>
+				<li><a href="login.jsp">Login</a></li>
+			</ul>
+		</div>
+	</s:if>
+	<s:else>
+		<div class="entirebody">
+			<ul class="mainnav">
+				<li><a href="<s:url action="GoHomeAction" />">Home</a></li>
+				<li><a
+					href='<s:url action="ItemViewAction"><s:param name="categoryId" value="%{'1'}"/></s:url>'>Product</a></li>
+				<li><a href="<s:url action="MyPageAction" />">My page</a></li>
+				<li><a href="<s:url action="LogoutAction" />">Logout</a></li>
+			</ul>
+		</div>
+	</s:else>
 </body>
 </html>
