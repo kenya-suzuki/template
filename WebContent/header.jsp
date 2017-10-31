@@ -56,7 +56,6 @@
 	<div class="nav-wrap">
 		<ul class="group" id="example-one">
 			<li class="current_page_item"><a href="<s:url action="GoHomeAction" />">Home</a></li>
-			<li><a href="<s:url action="GoHomeAction" />">Home</a></li>
 			<li><a href="<s:url action="ItemViewAction"><s:param name="categoryId" value="%{'1'}"/></s:url>">Product</a></li>
 			<li><a href="<s:url action="MyPageAction" />">My page</a></li>
 			<li><a href="login.jsp">Login</a></li>
