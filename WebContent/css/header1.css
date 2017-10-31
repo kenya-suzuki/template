@@ -1,8 +1,8 @@
 @CHARSET "UTF-8";
 
-body {
+.body {
 	font: 14px Arial, sans-serif;
-	color: #eee;
+	/**color: #eee;*/
 	margin: 0px;
 }
 
@@ -11,7 +11,7 @@ body {
 	padding: 20px 0px 20px 40px;
 	background-color: dimgrey;
 	width: 100%;
-	position: fixed;
+	/**position: fixed;*/
 }
 
 /* Clearfix */

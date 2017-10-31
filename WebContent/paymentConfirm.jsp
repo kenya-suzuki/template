@@ -8,12 +8,14 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
+<!-- <meta http-equiv="Content-Style-Type" content="text/css" />-->
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta charset="utf-8">
+<link rel="stylesheet" href="css/paymentConfirm.css">
+
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <title>BuyItemConfirm画面</title>
@@ -24,19 +26,24 @@
 	}
 </script>
 
-<link rel="stylesheet" href="css/paymentConfirm.css">
+
+<style>
+table{
+margin-top: 50px;
+}
+</style>
+
+
 </head>
 <body>
 	<!-- header -->
 	<s:include value="header.jsp" />
 	<!-- header end -->
 	<div id="main">
-		<div id="top">
-			<p>BuyItemConfirm</p>
-		</div>
-		<div>
+
+		<div  class="main">
 			<s:form action="PaymentComplateAction">
-				<table>
+				<table class="confirm_table">
 					<tr>
 						<td>商品名</td>
 						<td>値段</td>

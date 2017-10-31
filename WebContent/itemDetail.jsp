@@ -27,16 +27,11 @@
 			</div>
 			<div class="itemName">
 				<h4>
-					<s:property value="itemName" />
-				</h4>
-			</div>
-			<div class="itemAuthor">
-				<h4>
-					<s:property value="author" />
+					<s:property value="itemName" />  /  <s:property value="author" />
 				</h4>
 			</div>
 			<div class="itemPrice">
-				<s:property value="price" />
+				<s:property value="price" />円
 				<!--<fmt:formatNumber value="${price}" pattern="###,###,###" />-->
 			</div>
 

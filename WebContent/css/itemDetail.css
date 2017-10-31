@@ -5,13 +5,16 @@
 }
 
 .item-imgs {
-	width: 100px
+	width: 100px;
+	margin: inherit;
 }
 
 .item-img {
-	margin: auto;
-	width: 600px;
-	margin-top:50px;
+    margin: auto;
+    width: 600px;
+    margin-top: 120px;
+    margin-left: 30px;
+    box-shadow: 0 0 20px 0px black;
 }
 
 .item-img a img {
@@ -19,7 +22,13 @@
 }
 
 h4 {
-	margin: auto;
+	margin: 20px 20px 20px 350px;
+	font-size: 20px;
+}
+
+.itemPrice{
+	margin: 20px 20px 20px 350px;
+	font-size: 20px;
 }
 
 a {

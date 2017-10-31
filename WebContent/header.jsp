@@ -51,7 +51,7 @@
 </script>
 
 </head>
-<body>
+<body class="body">
 
 	<div class="nav-wrap">
 		<ul class="group" id="example-one">
