@@ -43,7 +43,6 @@
 		</div>
 	</s:iterator>
 
-
 	<script src="js/jquery.fadethis.min.js"></script>
 	<script>
 		$(function() {
